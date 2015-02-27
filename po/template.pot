@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: assets\templates\about.html:4
+msgid "A web interface for managing the Kodi media library."
+msgstr ""
+
+#: assets\templates\about.html:24
+msgid "Forums"
+msgstr ""
+
+#: assets\templates\about.html:22
+msgid "Home Page"
+msgstr ""
+
+#: assets\templates\about.html:14
+msgid "Issues"
+msgstr ""
+
+#: assets\templates\about.html:23
+msgid "JSON-RPC API"
+msgstr ""
+
+#: index.html:27
+msgid "Menu"
+msgstr ""
+
+#: assets\templates\movies\index.html:1
+#: index.html:33
+msgid "Movies"
+msgstr ""
+
+#: assets\templates\music\index.html:1
+#: index.html:36
+msgid "Music"
+msgstr ""
+
+#: assets\templates\music-videos\index.html:1
+#: index.html:35
+msgid "Music Videos"
+msgstr ""
+
+#: app.js:64
+#: app.js:66
+msgid "not connected"
+msgstr ""
+
+#: assets\templates\movies\index.html:2
+#: assets\templates\music-videos\index.html:2
+#: assets\templates\music\index.html:2
+#: assets\templates\tv-shows\index.html:2
+msgid "Not implemented yet."
+msgstr ""
+
+#: assets\templates\about.html:29
+msgid "Powered By"
+msgstr ""
+
+#: assets\templates\about.html:13
+msgid "Project Page"
+msgstr ""
+
+#: assets\templates\about.html:15
+msgid "Support Thread"
+msgstr ""
+
+#: assets\templates\tv-shows\index.html:1
+#: index.html:34
+msgid "TV Shows"
+msgstr ""
+
+#: assets\templates\about.html:3
+msgid "Web Interface Media Manager"
+msgstr ""

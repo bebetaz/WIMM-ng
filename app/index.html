@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-strict-di ng-app="WIMM" ng-controller="AppCtrl" ng-init="init()">
+  <head>
+    <title>Web Interface Media Manager</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+
+    <link href="/addons/webinterface.default/favicon.ico" rel="icon" type="image/x-icon">
+
+    <link href="assets/css/app.css" rel="stylesheet" type="text/css">
+
+    <script src="assets/js/vendor.js"></script>
+  </head>
+  <body>
+
+    <div class="fixed">
+      <top-bar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><a ui-sref="about">wimm</a></h1>
+          </li>
+          <li toggle-top-bar class="menu-icon"><a href="#" translate>Menu</a></li>
+        </ul>
+
+        <top-bar-section>
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li ui-sref-active="active"><a ui-sref="movies" translate>Movies</a></li>
+            <li ui-sref-active="active"><a ui-sref="tvShows" translate>TV Shows</a></li>
+            <li ui-sref-active="active"><a ui-sref="musicVideos" translate>Music Videos</a></li>
+            <li ui-sref-active="active"><a ui-sref="music" translate>Music</a></li>
+          </ul>
+
+          <!-- Right Nav Section -->
+          <!--<ul class="right">
+          </ul>-->
+        </top-bar-section>
+      </top-bar>
+    </div>
+
+
+    <main>
+      <div ng-class="['ui-animation']" ui-view></div>
+
+      <div id="loading-screen">
+        <div class="loading-outer-ball"></div>
+        <div class="loading-inner-ball"></div>
+      </div>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/app-translations.js"></script>
+  </body>
+</html>
