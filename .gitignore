@@ -1,0 +1,13 @@
+# Node.js NPM modules
+node_modules
+npm-debug.log
+
+# bower modules
+bower_components
+
+# build directories
+build
+.sass-cache
+
+# gettext binary files
+po/*.mo

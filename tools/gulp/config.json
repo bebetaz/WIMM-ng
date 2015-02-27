@@ -1,0 +1,51 @@
+{
+  "sassFile": "app/assets/scss/app.scss",
+  "sassPaths": [
+    "app/assets/scss",
+    "bower_components/foundation/scss",
+    "bower_components/open-iconic/font/css"
+  ],
+  "sassOutput": "build/assets/css",
+  "sassWatch": "app/assets/scss/**/*",
+
+  "appJS": [
+    "app/assets/js/*/module.js",
+    "app/assets/js/**/*.js",
+    "app/assets/js/app.js"
+  ],
+  "appTranslations": [
+    "app/assets/js/**/*.js",
+    "app/**/*.html"
+  ],
+  "appJSOutput": "build/assets/js",
+  "appJSWatch": "app/assets/js/**/*",
+
+  "tplsOutput": "build/templates",
+  "tplsWatch": [
+    "app/**/*.html",
+    "!app/index.html"
+    ],
+
+  "vendorJS": [
+    "bower_components/fastclick/lib/fastclick.js",
+
+    "bower_components/jquery/dist/jquery.js",
+    "bower_components/jquery.cookie/jquery.cookie.js",
+    "bower_components/jquery-placeholder/jquery.placeholder.js",
+
+    "bower_components/modernizer/modernizer.js",
+
+    "bower_components/angular/angular.js",
+    "bower_components/angular-animate/angular-animate.js",
+    "bower_components/angular-gettext/dist/angular-gettext.js",
+    "bower_components/ui-router/release/angular-ui-router.js",
+    "bower_components/angular-foundation/mm-foundation-tpls.js"
+  ],
+  "vendorJSOutput": "build/assets/js",
+
+  "appAssets": [
+    "app/**/*",
+    "!app/templates/**/*",
+    "!app/assets/{scss,js}/**/*"
+  ]
+}
