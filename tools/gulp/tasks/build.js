@@ -12,7 +12,7 @@
   gulp.task('build', function() {
     return runSequence(
       'clean',
-      ['copy', 'sass', 'uglify:vendor', 'uglify:app', 'translations'],
+      ['copy', 'sass', 'uglify:vendor', 'uglify:app', 'translations', 'addon'],
       //'copy-templates',
       function() {
         plugins.util.log('Successfully built.');

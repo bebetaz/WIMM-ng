@@ -1,5 +1,5 @@
 {
-  "name": "webinterface.WIMM",
+  "name": "webinterface.wimm-ng",
   "version": "0.0.0",
   "description": "A web interface for managing the Kodi media library.",
   "license": {
@@ -51,6 +51,7 @@
     "gulp-util": "^3.0.4",
     "jshint-stylish": "^1.0.1",
     "require-dir": "^0.1.0",
-    "run-sequence": "^1.0.2"
+    "run-sequence": "^1.0.2",
+    "semver": "^4.3.3"
   }
 }
