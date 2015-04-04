@@ -1,22 +1,11 @@
 (function() {
   'use strict';
 
-  var config    = require('../config.json');
   var pkg       = require('../../../package.json');
   var gulp      = require('gulp');
-  var plugins   = require('gulp-load-plugins')();
   var cp        = require('child_process');
   var changelog = require('conventional-changelog');
   var fs        = require('fs');
-
-  // plugins: (loaded through gulp-load-plugins)
-  //  gulp-jshint
-
-  // modules: (other required modules not listed above)
-  //  jshint-stylish
-
-  // config:
-  //  appJS - these files are for your app's JavaScript
 
   // get latest tag from master
   function latestTag(done) {
