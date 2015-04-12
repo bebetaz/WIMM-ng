@@ -1,0 +1,165 @@
+<header class="row">
+  <div class="small-12 columns">
+    <h1>{{tvShow.title}}</h1>
+  </div>
+</header>
+
+<!--
+
+Library.Id tvshowid
+    [ Optional.String title = null ]
+    [ Optional.Integer playcount = null ]
+    [ mixed studio = null ]
+    [ Optional.String plot = null ]
+    [ mixed genre = null ]
+    [ Optional.Number rating = null ]
+    [ Optional.String mpaa = null ]
+    [ Optional.String imdbnumber = null ]
+    [ Optional.String premiered = null ]
+    [ Optional.String votes = null ]
+    [ Optional.String lastplayed = null ]
+    [ Optional.String originaltitle = null ]
+    [ Optional.String sorttitle = null ]
+    [ Optional.String episodeguide = null ]
+[ Optional.String thumbnail = null ]
+[ Optional.String fanart = null ]
+    [ mixed tag = null ]
+[ mixed art = null ]
+
+-->
+
+<main class="row">
+  <div class="small-12 columns">
+
+<tabset>
+  <tab heading="Details">
+
+      <form name="form">
+        <div class="row"><!-- title|year -->
+          <div class="small-12 medium-9 columns"><!-- title -->
+            <label>Title
+              <input type="text" name="title" required ng-model="tvShow.title">
+            </label>
+          </div><!-- /title -->
+          <div class="small-12 medium-3 columns"><!-- year -->
+            <label>Premiered
+              <input type="date" name="premiered" wimm-convert-date placeholder="yyyy-mm-dd" ng-model="tvShow.premiered">
+            </label>
+          </div><!-- /year -->
+        </div><!-- /title|year -->
+        <div class="row"><!-- sorttitle|originaltitle -->
+          <div class="small-12 medium-6 columns"><!-- sorttitle -->
+            <label>Sort Title
+              <input type="text" name="sorttitle" placeholder="defaults to the shows title" ng-model="tvShow.sortitle">
+            </label>
+          </div><!-- /sorttitle -->
+          <div class="small-12 medium-6 columns"><!-- originaltitle -->
+            <label>Original Title
+              <input type="text" name="originaltitle" ng-model="tvShow.originaltitle">
+            </label>
+          </div><!-- /originaltitle -->
+        </div><!-- /sorttitle|originaltitle -->
+        <div class="row"><!-- plot -->
+          <div class="small-12 columns">
+            <label>Plot
+              <textarea name="plot" rows="5" ng-model="tvShow.plot"></textarea>
+            </label>
+          </div>
+        </div><!-- /plot -->
+        <div class="row"><!-- genre|tag -->
+          <div class="small-12 medium-6 columns"><!-- genre -->
+            <label>Genre
+              <textarea name="genre" wimm-array-to-list placeholder="one genre per line" ng-model="tvShow.genre"></textarea>
+            </label>
+          </div><!-- /genre -->
+          <div class="small-12 medium-6 columns"><!-- tag -->
+            <label>Tags
+              <textarea name="tag" wimm-array-to-list placeholder="one tag per line" ng-model="tvShow.tag"></textarea>
+            </label>
+          </div><!-- /tag -->
+        </div><!-- /genre|tag -->
+        <div class="row"><!-- studio -->
+          <div class="small-12 columns">
+            <label>Studio
+              <textarea name="studio" wimm-array-to-list placeholder="one studio per line" ng-model="tvShow.studio"></textarea>
+            </label>
+          </div>
+        </div><!-- /studio -->
+        <div class="row"><!-- episodeguide|mpaa -->
+          <div class="small-12 medium-8 columns"><!-- episodeguide -->
+            <label>Episode Guide
+              <!-- NOTE: disabled for now it's an XML blob :-( -->
+              <input type="text" name="episodeguide" disabled ng-model="tvShow.episodeguide">
+            </label>
+          </div><!-- /episodeguide -->
+          <div class="small-12 medium-4 columns"><!-- mpaa -->
+            <label>Content Rating
+              <input type="text" name="mpaa" ng-model="tvShow.mpaa">
+            </label>
+          </div><!-- /mpaa -->
+        </div><!-- /episodeguide|mpaa -->
+        <div class="row"><!-- playcount|lastplayed -->
+          <div class="small-12 medium-3 columns"><!-- playcount -->
+            <label>Play Count
+              <input type="number" name="playcount" min="0" wimm-string-to-number placeholder="0" ng-model="tvShow.playcount">
+            </label>
+          </div><!-- /playcount -->
+          <div class="small-12 medium-9 columns"><!-- lastplayed -->
+            <label>Last Played
+              <!-- NOTE: need a input[datetime] implementation and locale date
+                         formats need handled i.e. US: mm/dd/yyyy UK: dd/mm/yyyy
+
+                         disabled for now so user can't input rubbish
+              -->
+              <input type="text" name="lastplayed" placeholder="Never" ng-model="tvShow.lastplayed" disabled>
+            </label>
+          </div><!-- /lastplayed -->
+        </div><!-- /playcount|lastplayed -->
+        <div class="row"><!-- imdbnumber|rating|votes -->
+          <div class="small-12 medium-4 columns"><!-- imdbnumber -->
+            <label>The TVDb Id
+              <div class="row collapse">
+                <div class="small-10 columns">
+                  <input type="text" name="imdbnumber" ng-model="tvShow.imdbnumber">
+                </div>
+                <div class="small-2 columns">
+                  <a ng-click="viewTvDbPage(tvShow.imdbnumber)" class="button postfix">View</a>
+                </div>
+              </div>
+            </label>
+          </div><!-- /imdbnumber -->
+          <div class="small-12 medium-4 columns"><!-- rating -->
+            <label>Rating
+              <input type="number" name="rating" min="0" step="any" wimm-string-to-number ng-model="tvShow.rating">
+            </label>
+          </div><!-- /rating -->
+          <div class="small-12 medium-4 columns"><!-- votes -->
+            <label>Votes
+              <input type="number" name="votes" min="0" wimm-string-to-number placeholder="None" ng-model="tvShow.votes">
+            </label>
+          </div><!-- /imdbnumber -->
+        </div><!-- /imdbnumber|rating|votes -->
+        <div class="row">
+          <div class="small-12 columns">
+            <a ng-click="saveChanges()" class="button expand" role="button">Save</a>
+          </div>
+        </div>
+      </form>
+
+  </tab>
+  <tab heading="Seasons">
+
+    <ul class="small-block-grid-2 medium-block-grid-4 xlarge-block-grid-6">
+      <li ng-repeat="season in seasons.seasons">
+        <a class="th" role="button" aria-label="Thumbnail" ui-sref="tvSeason({tvshowid: tvShow.tvshowid, season: season.season})">
+          <img ng-src="{{season.thumbnail | artworkUrl}}">
+        </a>
+        <a ui-sref="tvSeason({tvshowid: tvShow.tvshowid, season: season.season})" class="small button expand" role="button">Season {{season.season}}</a>
+      </li>
+    </ul>
+
+  </tab>
+</tabset>
+
+    </div>
+  </main>
