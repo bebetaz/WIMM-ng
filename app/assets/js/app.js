@@ -8,7 +8,10 @@
       'gettext',
 
       // angular-foundation
-      'mm.foundation'
+      'mm.foundation',
+
+      // WIMM
+      'WIMM.common'
     ])
     .config(config)
     .run(run)
@@ -58,7 +61,8 @@
     //gettextCatalog.debug = true;
   }
 
-  function appCtrl(PKG, $rootScope, $scope, $log, gettext) {
+  function appCtrl(PKG, $rootScope, $scope, $log, gettext,
+                   KodiWebSocketService) {
     $scope.PKG = PKG;
     $scope.version = PKG.version;
     $scope.kodiVersion = gettext('not connected');
@@ -68,6 +72,7 @@
 
     $scope.init = function() {
       $log.log('Thunderbirds are go!');
+      KodiWebSocketService.connect();
     };
 
     $rootScope.$on('$stateChangeStart',
