@@ -90,12 +90,12 @@ Library.Id movieid
       <div class="row"><!-- genre|tag -->
         <div class="small-12 medium-6 columns"><!-- genre -->
           <label><span translate>Genre</span>
-            <textarea name="genre" wimm-array-to-list placeholder="one genre per line" ng-model="movie.genre"></textarea>
+            <textarea name="genre" wimm-array-to-list placeholder="{{'one genre per line'|translate}}" ng-model="movie.genre"></textarea>
           </label>
         </div><!-- /genre -->
         <div class="small-12 medium-6 columns"><!-- tag -->
           <label><span translate>Tags</span>
-            <textarea name="tag" wimm-array-to-list placeholder="one tag per line" ng-model="movie.tag"></textarea>
+            <textarea name="tag" wimm-array-to-list placeholder="{{'one tag per line'|translate}}" ng-model="movie.tag"></textarea>
           </label>
         </div><!-- /tag -->
       </div><!-- /genre|tag -->
@@ -107,31 +107,31 @@ Library.Id movieid
         </div><!-- /set -->
         <div class="small-12 medium-6 columns"><!-- showlink -->
           <label><span translate>TV Show Link</span>
-            <textarea name="showlink" wimm-array-to-list placeholder="one show title per line" ng-model="movie.showlink"></textarea>
+            <textarea name="showlink" wimm-array-to-list placeholder="{{'one show title per line'|translate}}" ng-model="movie.showlink"></textarea>
           </label>
         </div><!-- /showlink -->
       </div><!-- /set|showlink -->
       <div class="row"><!-- director|writer -->
         <div class="small-12 medium-6 columns"><!-- director -->
           <label><span translate>Director</span>
-            <textarea name="director" wimm-array-to-list placeholder="one director per line" ng-model="movie.director"></textarea>
+            <textarea name="director" wimm-array-to-list placeholder="{{'one director per line'|translate}}" ng-model="movie.director"></textarea>
           </label>
         </div><!-- /director -->
         <div class="small-12 medium-6 columns"><!-- writer -->
           <label><span translate>Writer</span>
-            <textarea name="writer" wimm-array-to-list placeholder="one writer per line" ng-model="movie.writer"></textarea>
+            <textarea name="writer" wimm-array-to-list placeholder="{{'one writer per line'|translate}}" ng-model="movie.writer"></textarea>
           </label>
         </div><!-- /writer -->
       </div><!-- /director|writer -->
       <div class="row"><!-- country|studio -->
         <div class="small-12 medium-6 columns"><!-- country -->
           <label><span translate>Country</span>
-            <textarea name="country" wimm-array-to-list placeholder="one country per line" ng-model="movie.country"></textarea>
+            <textarea name="country" wimm-array-to-list placeholder="{{'one country per line'|translate}}" ng-model="movie.country"></textarea>
           </label>
         </div><!-- /country -->
         <div class="small-12 medium-6 columns"><!-- studio -->
           <label><span translate>Studio</span>
-            <textarea name="studio" wimm-array-to-list placeholder="one studio per line" ng-model="movie.studio"></textarea>
+            <textarea name="studio" wimm-array-to-list placeholder="{{'one studio per line'|translate}}" ng-model="movie.studio"></textarea>
           </label>
         </div><!-- /studio -->
       </div><!-- /country|studio -->
@@ -143,7 +143,7 @@ Library.Id movieid
         </div><!-- /playcount -->
         <div class="small-12 medium-9 columns"><!-- lastplayed -->
           <label><span translate>Last Played</span>
-            <input type="text" name="lastplayed" placeholder="Never" disabled ng-model="movie.lastplayed">
+            <input type="text" name="lastplayed" placeholder="{{'Never'|translate}}" disabled ng-model="movie.lastplayed">
           </label>
         </div><!-- /lastplayed -->
       </div><!-- /playcount|lastplayed -->
@@ -167,7 +167,7 @@ Library.Id movieid
         </div><!-- /rating -->
         <div class="small-12 medium-4 columns"><!-- votes -->
           <label><span translate>Votes</span>
-            <input type="number" name="votes" min="0" wimm-string-to-number placeholder="None" ng-model="movie.votes">
+            <input type="number" name="votes" min="0" wimm-string-to-number placeholder="{{'None'|translate}}" ng-model="movie.votes">
           </label>
         </div><!-- /votes -->
       </div><!-- /imdbnumber|rating|votes -->
@@ -176,7 +176,7 @@ Library.Id movieid
           <label><span translate>Runtime</span>
             <div class="row collapse">
               <div class="small-9 columns">
-                <input type="number" name="runtime" min="0" wimm-string-to-number placeholder="runtime in seconds" ng-model="movie.runtime">
+                <input type="number" name="runtime" min="0" wimm-string-to-number placeholder="{{'runtime in seconds'|translate}}" ng-model="movie.runtime">
               </div>
               <div class="small-3 columns">
                 <span class="postfix" translate>seconds</span>
@@ -191,7 +191,7 @@ Library.Id movieid
         </div><!-- /mpaa -->
         <div class="small-12 medium-4 columns"><!-- top250 -->
           <label><span translate>IMDb Top 250</span>
-            <input type="number" name="top250" min="0" wimm-string-to-number placeholder="None" ng-model="movie.top250">
+            <input type="number" name="top250" min="0" wimm-string-to-number placeholder="{{'None'|translate}}" ng-model="movie.top250">
           </label>
         </div><!-- /top250 -->
       </div><!-- /runtime|mpaa|top250 -->

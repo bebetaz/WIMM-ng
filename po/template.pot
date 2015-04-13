@@ -88,11 +88,14 @@ msgstr ""
 msgid "Music Videos"
 msgstr ""
 
+#: assets\templates\movies\movie.html:146
 #: assets\templates\tv-shows\episode.html:79
 #: assets\templates\tv-shows\show.html:114
 msgid "Never"
 msgstr ""
 
+#: assets\templates\movies\movie.html:170
+#: assets\templates\movies\movie.html:194
 #: assets\templates\tv-shows\episode.html:103
 #: assets\templates\tv-shows\show.html:138
 msgid "None"
@@ -108,22 +111,35 @@ msgstr ""
 msgid "Not implemented yet."
 msgstr ""
 
+#: assets\templates\movies\movie.html:129
+msgid "one country per line"
+msgstr ""
+
+#: assets\templates\movies\movie.html:117
 #: assets\templates\tv-shows\episode.html:62
 msgid "one director per line"
 msgstr ""
 
+#: assets\templates\movies\movie.html:93
 #: assets\templates\tv-shows\show.html:72
 msgid "one genre per line"
 msgstr ""
 
+#: assets\templates\movies\movie.html:110
+msgid "one show title per line"
+msgstr ""
+
+#: assets\templates\movies\movie.html:134
 #: assets\templates\tv-shows\show.html:84
 msgid "one studio per line"
 msgstr ""
 
+#: assets\templates\movies\movie.html:98
 #: assets\templates\tv-shows\show.html:77
 msgid "one tag per line"
 msgstr ""
 
+#: assets\templates\movies\movie.html:122
 #: assets\templates\tv-shows\episode.html:67
 msgid "one writer per line"
 msgstr ""
@@ -173,6 +189,7 @@ msgstr ""
 msgid "Runtime"
 msgstr ""
 
+#: assets\templates\movies\movie.html:179
 #: assets\templates\tv-shows\episode.html:88
 msgid "runtime in seconds"
 msgstr ""
