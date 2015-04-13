@@ -9,6 +9,7 @@ msgid "A web interface for managing the Kodi media library."
 msgstr ""
 
 #: assets\templates\movies\movie.html:188
+#: assets\templates\tv-shows\show.html:96
 msgid "Content Rating"
 msgstr ""
 
@@ -16,8 +17,21 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
+#: assets\templates\tv-shows\show.html:53
+msgid "defaults to the shows title"
+msgstr ""
+
 #: assets\templates\movies\movie.html:116
+#: assets\templates\tv-shows\episode.html:61
 msgid "Director"
+msgstr ""
+
+#: assets\templates\tv-shows\show.html:90
+msgid "Episode Guide"
+msgstr ""
+
+#: assets\templates\tv-shows\episode.html:40
+msgid "First Aired"
 msgstr ""
 
 #: assets\templates\about.html:24
@@ -25,6 +39,7 @@ msgid "Forums"
 msgstr ""
 
 #: assets\templates\movies\movie.html:92
+#: assets\templates\tv-shows\show.html:71
 msgid "Genre"
 msgstr ""
 
@@ -49,6 +64,8 @@ msgid "JSON-RPC API"
 msgstr ""
 
 #: assets\templates\movies\movie.html:145
+#: assets\templates\tv-shows\episode.html:78
+#: assets\templates\tv-shows\show.html:108
 msgid "Last Played"
 msgstr ""
 
@@ -71,6 +88,16 @@ msgstr ""
 msgid "Music Videos"
 msgstr ""
 
+#: assets\templates\tv-shows\episode.html:79
+#: assets\templates\tv-shows\show.html:114
+msgid "Never"
+msgstr ""
+
+#: assets\templates\tv-shows\episode.html:103
+#: assets\templates\tv-shows\show.html:138
+msgid "None"
+msgstr ""
+
 #: app.js:62
 #: app.js:64
 msgid "not connected"
@@ -81,15 +108,41 @@ msgstr ""
 msgid "Not implemented yet."
 msgstr ""
 
+#: assets\templates\tv-shows\episode.html:62
+msgid "one director per line"
+msgstr ""
+
+#: assets\templates\tv-shows\show.html:72
+msgid "one genre per line"
+msgstr ""
+
+#: assets\templates\tv-shows\show.html:84
+msgid "one studio per line"
+msgstr ""
+
+#: assets\templates\tv-shows\show.html:77
+msgid "one tag per line"
+msgstr ""
+
+#: assets\templates\tv-shows\episode.html:67
+msgid "one writer per line"
+msgstr ""
+
 #: assets\templates\movies\movie.html:64
+#: assets\templates\tv-shows\episode.html:47
+#: assets\templates\tv-shows\show.html:57
 msgid "Original Title"
 msgstr ""
 
 #: assets\templates\movies\movie.html:140
+#: assets\templates\tv-shows\episode.html:73
+#: assets\templates\tv-shows\show.html:103
 msgid "Play Count"
 msgstr ""
 
 #: assets\templates\movies\movie.html:85
+#: assets\templates\tv-shows\episode.html:54
+#: assets\templates\tv-shows\show.html:64
 msgid "Plot"
 msgstr ""
 
@@ -101,23 +154,43 @@ msgstr ""
 msgid "Powered By"
 msgstr ""
 
+#: assets\templates\tv-shows\show.html:45
+msgid "Premiered"
+msgstr ""
+
 #: assets\templates\about.html:13
 msgid "Project Page"
 msgstr ""
 
 #: assets\templates\movies\movie.html:164
+#: assets\templates\tv-shows\episode.html:97
+#: assets\templates\tv-shows\show.html:132
 msgid "Rating"
 msgstr ""
 
 #: assets\templates\movies\movie.html:176
+#: assets\templates\tv-shows\episode.html:85
 msgid "Runtime"
 msgstr ""
 
+#: assets\templates\tv-shows\episode.html:88
+msgid "runtime in seconds"
+msgstr ""
+
 #: assets\templates\movies\movie.html:207
+#: assets\templates\tv-shows\episode.html:109
+#: assets\templates\tv-shows\show.html:144
 msgid "Save"
 msgstr ""
 
+#: assets\templates\tv-shows\episode.html:3
+#: assets\templates\tv-shows\season.html:3
+#: assets\templates\tv-shows\show.html:157
+msgid "Season"
+msgstr ""
+
 #: assets\templates\movies\movie.html:182
+#: assets\templates\tv-shows\episode.html:91
 msgid "seconds"
 msgstr ""
 
@@ -126,10 +199,12 @@ msgid "Set"
 msgstr ""
 
 #: assets\templates\movies\movie.html:57
+#: assets\templates\tv-shows\show.html:52
 msgid "Sort Title"
 msgstr ""
 
 #: assets\templates\movies\movie.html:133
+#: assets\templates\tv-shows\show.html:83
 msgid "Studio"
 msgstr ""
 
@@ -142,10 +217,17 @@ msgid "Tag Line"
 msgstr ""
 
 #: assets\templates\movies\movie.html:97
+#: assets\templates\tv-shows\show.html:76
 msgid "Tags"
 msgstr ""
 
+#: assets\templates\tv-shows\show.html:120
+msgid "The TVDb Id"
+msgstr ""
+
 #: assets\templates\movies\movie.html:45
+#: assets\templates\tv-shows\episode.html:35
+#: assets\templates\tv-shows\show.html:40
 msgid "Title"
 msgstr ""
 
@@ -171,10 +253,13 @@ msgid "Unable to parse %s as an integer."
 msgstr ""
 
 #: assets\templates\movies\movie.html:158
+#: assets\templates\tv-shows\show.html:126
 msgid "View"
 msgstr ""
 
 #: assets\templates\movies\movie.html:169
+#: assets\templates\tv-shows\episode.html:102
+#: assets\templates\tv-shows\show.html:137
 msgid "Votes"
 msgstr ""
 
@@ -183,6 +268,7 @@ msgid "Web Interface Media Manager"
 msgstr ""
 
 #: assets\templates\movies\movie.html:121
+#: assets\templates\tv-shows\episode.html:66
 msgid "Writer"
 msgstr ""
 
