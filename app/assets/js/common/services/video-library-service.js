@@ -12,6 +12,16 @@
       ws: KodiWebSocketService
     };
 
+    var movieBasicProperties = ['title', 'year', 'thumbnail'];
+    var movieDetailedProperties = [
+      'title', 'genre', 'year', 'rating', 'director', 'trailer', 'tagline',
+      'plot', 'plotoutline', 'originaltitle', 'lastplayed', 'playcount',
+      'writer', 'studio', 'mpaa', 'cast', 'country', 'imdbnumber', 'runtime',
+      'set', 'showlink', 'streamdetails', 'top250', 'votes', 'fanart',
+      'thumbnail', 'file', 'sorttitle', 'resume', 'dateadded', 'tag',
+      'art'
+    ];
+
     var tvShowBasicProperties = ['title', 'thumbnail'];
     // Other Fields:
     //   year, cast, episode, fanart, thumbnail, file, watchedepisodes,
@@ -31,6 +41,149 @@
     var episodeDetailedProperties = ['title', 'playcount', 'runtime',
       'director', 'plot', 'rating', 'votes', 'lastplayed', 'writer',
       'firstaired', 'season', 'episode', 'originaltitle'];
+
+
+    function postLoadCleanUp(value, fieldName) {
+      /*jshint validthis:true */
+
+      if (fieldName === 'sorttitle' && (!value || value.length === 0)) {
+        this[fieldName] = $filter('wimmRemoveArticle')(this.title);
+      }
+      else if ((fieldName === 'votes' || fieldName === 'top250') &&
+          !angular.isNumber(value)) {
+        this[fieldName] = parseInt(value);
+
+        if (isNaN(this[fieldName])) {
+          this[fieldName] = value;
+          $log.error(gettext('Unable to parse %s as an integer.'),
+            fieldName, value);
+        }
+      }
+      else if (fieldName === 'rating' && !angular.isNumber(value)) {
+        this.rating = parseFloat(value);
+
+        if (isNaN(this.rating)) {
+          this.rating = value;
+          $log.error(gettext('Unable to parse %s as a float.'),
+            fieldName, value);
+        }
+      }
+    }
+
+    function preSaveCleanUp(value, fieldName) {
+      /*jshint validthis:true */
+
+      if (fieldName === 'sorttitle' &&
+          value &&
+          value === $filter('wimmRemoveArticle')(this.title)) {
+        this[fieldName] = null;
+      }
+      else if (fieldName === 'rating') {
+        this[fieldName] = parseFloat(value.toFixed(1));
+      }
+    }
+
+    /* ---------------------------------------------------------------------- *
+     *   Movie Methods                                                        *
+     * ---------------------------------------------------------------------- */
+
+    /**
+     * Retrieve all movies
+     * @public
+     * @see [VideoLibrary.GetMovies]{@link
+     *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.GetMovies}
+     */
+    Service.getMovies = function(filter, limits) {
+      var params = {
+        properties: movieBasicProperties,
+        sort: {order: 'ascending', ignorearticle: true, method: 'sorttitle'}
+      };
+
+      if (!angular.isUndefined(filter)) {
+        params.filter = filter;
+      }
+
+      if (!angular.isUndefined(limits)) {
+        params.limits = limits;
+      }
+
+      var promise = Service.ws.sendCommand('VideoLibrary.GetMovies', params);
+      var defer = $q.defer();
+
+      promise.then(
+        function(result) {
+          if (result.movies) {
+            for (var i = 0; i < result.movies.length; i++) {
+              angular
+                .forEach(result.movies[i], postLoadCleanUp, result.movies[i]);
+            }
+          }
+          else {
+            result.movies = [];
+          }
+
+          defer.resolve(result);
+        },
+        function(error) {
+          defer.reject(error);
+        }
+      );
+
+      return defer.promise;
+    };
+
+    /**
+     * Retrieve details about a specific movie
+     * @param {number} movieid - the id of the movie to retrieve
+     * @private
+     * @see [VideoLibrary.GetMovieDetails]{@link
+     *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.GetMovieDetails}
+     */
+    Service.getMovie = function(movieid) {
+      if (movieid < 0) {
+        $log.error(
+          'kodi.VideoLibraryService#getMovie: movieid must be >= 0.',
+          movieid);
+        return;
+      }
+
+      var promise = Service.ws.sendCommand('VideoLibrary.GetMovieDetails', {
+        movieid: movieid,
+        properties: movieDetailedProperties
+      });
+
+      var defer = $q.defer();
+      promise.then(
+        function(result) {
+          angular
+            .forEach(result.moviedetails, postLoadCleanUp, result.moviedetails);
+          defer.resolve(result);
+        },
+        function(error) {
+          defer.reject(error);
+        }
+      );
+
+      return defer.promise;
+    };
+
+    /**
+     * Update a movies details
+     * @param {number} movieid - the id of the movie to update
+     * @param {Object} updates - an object containing the updated fields
+     * @public
+     * @see [VideoLibrary.SetMovieDetails]{@link
+     *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.SetMovieDetails}
+     */
+    Service.saveMovie = function(movieid, updates) {
+      angular.forEach(updates, preSaveCleanUp, updates);
+      updates.movieid = movieid;
+
+      var promise = Service.ws.sendCommand('VideoLibrary.SetMovieDetails',
+        updates);
+      // Storing in a variable for clarity on what's being returned
+      return promise;
+    };
 
     /* ---------------------------------------------------------------------- *
      *   TV Show Methods                                                        *

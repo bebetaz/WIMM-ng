@@ -12,6 +12,7 @@
 
       // WIMM
       'WIMM.common',
+      'WIMM.movies',
       'WIMM.tvShows'
     ])
     .config(config)
@@ -25,10 +26,6 @@
       .state('about', {
         url: '/about',
         templateUrl: 'assets/templates/about.html'
-      })
-      .state('movies', {
-        url: '/movies',
-        templateUrl: 'assets/templates/movies/index.html'
       })
       .state('musicVideos', {
         url: '/music-videos',
