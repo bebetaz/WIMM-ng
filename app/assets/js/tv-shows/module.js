@@ -28,13 +28,7 @@
       .state('tvSeason', {
         url: '/show-{tvshowid:int}/season-{season:int}',
         templateUrl: 'assets/templates/tv-shows/season.html',
-        controller: function viewSeasonCtrl($scope, $stateParams, tvShow,
-                                            episodes) {
-            $scope.tvShow = tvShow.tvshowdetails;
-            $scope.season = $stateParams.season;
-            $scope.episodes = episodes.episodes;
-
-          },
+        controller: 'SeasonCtrl',
         resolve: {
           tvShow: getShow,
           episodes: getEpisodes
@@ -44,16 +38,7 @@
         url: '/show-{tvshowid:int}/season-{season:int}' +
              '/{episodeid:int}-episode-{episode:int}',
         templateUrl: 'assets/templates/tv-shows/episode.html',
-        controller: function viewSeasonCtrl($scope, $stateParams, tvShow,
-                                            episode, VideoLibraryService) {
-            $scope.tvShow = tvShow.tvshowdetails;
-            $scope.origEpisode = angular.copy(episode.episodedetails);
-            $scope.episode = episode.episodedetails;
-
-            $scope.saveChanges = function saveChanges() {
-              VideoLibraryService.setEpisodeDetails($scope.episode);
-            };
-          },
+        controller: 'EpisodeCtrl',
         resolve: {
           tvShow: getShow,
           episode: getEpisode
@@ -61,13 +46,12 @@
       });
   }
 
-  function getShows(VideoLibraryService)
-  {
+  function getShows(VideoLibraryService) {
     return VideoLibraryService.getTVShows();
   }
 
   function getShow(VideoLibraryService, $stateParams) {
-    return VideoLibraryService.getTVShow($stateParams.tvshowid);
+    return VideoLibraryService.getTVShowDetails($stateParams.tvshowid);
   }
 
   function getSeasons(VideoLibraryService, $stateParams) {
@@ -80,8 +64,8 @@
   }
 
   function getEpisode(VideoLibraryService, $stateParams) {
-    return VideoLibraryService.getEpisode($stateParams.tvshowid,
-                                           $stateParams.episodeid);
+    return VideoLibraryService.getEpisodeDetails($stateParams.tvshowid,
+                                                 $stateParams.episodeid);
   }
 
 }(window.angular));

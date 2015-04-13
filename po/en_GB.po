@@ -1,294 +1,303 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: \n"
+"X-Generator: Poedit 1.7.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: assets\templates\about.html:4
 msgid "A web interface for managing the Kodi media library."
-msgstr ""
+msgstr "A web interface for managing the Kodi media library."
 
 #: assets\templates\movies\movie.html:188
 #: assets\templates\tv-shows\show.html:96
 msgid "Content Rating"
-msgstr ""
+msgstr "Content Rating"
 
 #: assets\templates\movies\movie.html:128
 msgid "Country"
-msgstr ""
+msgstr "Country"
 
 #: assets\templates\tv-shows\show.html:53
 msgid "defaults to the shows title"
-msgstr ""
+msgstr "defaults to the shows title"
 
 #: assets\templates\movies\movie.html:116
 #: assets\templates\tv-shows\episode.html:61
 msgid "Director"
-msgstr ""
+msgstr "Director"
 
 #: assets\templates\tv-shows\show.html:90
 msgid "Episode Guide"
-msgstr ""
+msgstr "Episode Guide"
 
 #: assets\templates\tv-shows\episode.html:40
 msgid "First Aired"
-msgstr ""
+msgstr "First Aired"
 
 #: assets\templates\about.html:24
 msgid "Forums"
-msgstr ""
+msgstr "Forums"
 
 #: assets\templates\movies\movie.html:92
 #: assets\templates\tv-shows\show.html:71
 msgid "Genre"
-msgstr ""
+msgstr "Genre"
 
 #: assets\templates\about.html:22
 msgid "Home Page"
-msgstr ""
+msgstr "Home Page"
 
 #: assets\templates\movies\movie.html:152
 msgid "IMDb Id"
-msgstr ""
+msgstr "IMDb Id"
 
 #: assets\templates\movies\movie.html:193
 msgid "IMDb Top 250"
-msgstr ""
+msgstr "IMDb Top 250"
 
 #: assets\templates\about.html:14
 msgid "Issues"
-msgstr ""
+msgstr "Issues"
 
 #: assets\templates\about.html:23
 msgid "JSON-RPC API"
-msgstr ""
+msgstr "JSON-RPC API"
 
 #: assets\templates\movies\movie.html:145
 #: assets\templates\tv-shows\episode.html:78
 #: assets\templates\tv-shows\show.html:108
 msgid "Last Played"
-msgstr ""
+msgstr "Last Played"
 
 #: index.html:27
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
-#: assets\templates\movies\index.html:3
-#: index.html:33
+#: assets\templates\movies\index.html:3 index.html:33
 msgid "Movies"
-msgstr ""
+msgstr "Movies"
 
-#: assets\templates\music\index.html:1
-#: index.html:36
+#: assets\templates\music\index.html:1 index.html:36
 msgid "Music"
-msgstr ""
+msgstr "Music"
 
-#: assets\templates\music-videos\index.html:1
-#: index.html:35
+#: assets\templates\music-videos\index.html:1 index.html:35
 msgid "Music Videos"
-msgstr ""
+msgstr "Music Videos"
 
 #: assets\templates\movies\movie.html:146
 #: assets\templates\tv-shows\episode.html:79
 #: assets\templates\tv-shows\show.html:114
 msgid "Never"
-msgstr ""
+msgstr "Never"
 
 #: assets\templates\movies\movie.html:170
 #: assets\templates\movies\movie.html:194
 #: assets\templates\tv-shows\episode.html:103
 #: assets\templates\tv-shows\show.html:138
 msgid "None"
-msgstr ""
+msgstr "None"
 
-#: app.js:62
-#: app.js:64
+#: app.js:62 app.js:64
 msgid "not connected"
-msgstr ""
+msgstr "not connected"
 
 #: assets\templates\music-videos\index.html:2
 #: assets\templates\music\index.html:2
 msgid "Not implemented yet."
-msgstr ""
+msgstr "Not implemented yet."
 
 #: assets\templates\movies\movie.html:129
 msgid "one country per line"
-msgstr ""
+msgstr "one country per line"
 
 #: assets\templates\movies\movie.html:117
 #: assets\templates\tv-shows\episode.html:62
 msgid "one director per line"
-msgstr ""
+msgstr "one director per line"
 
 #: assets\templates\movies\movie.html:93
 #: assets\templates\tv-shows\show.html:72
 msgid "one genre per line"
-msgstr ""
+msgstr "one genre per line"
 
 #: assets\templates\movies\movie.html:110
 msgid "one show title per line"
-msgstr ""
+msgstr "one show title per line"
 
 #: assets\templates\movies\movie.html:134
 #: assets\templates\tv-shows\show.html:84
 msgid "one studio per line"
-msgstr ""
+msgstr "one studio per line"
 
 #: assets\templates\movies\movie.html:98
 #: assets\templates\tv-shows\show.html:77
 msgid "one tag per line"
-msgstr ""
+msgstr "one tag per line"
 
 #: assets\templates\movies\movie.html:122
 #: assets\templates\tv-shows\episode.html:67
 msgid "one writer per line"
-msgstr ""
+msgstr "one writer per line"
 
 #: assets\templates\movies\movie.html:64
 #: assets\templates\tv-shows\episode.html:47
 #: assets\templates\tv-shows\show.html:57
 msgid "Original Title"
-msgstr ""
+msgstr "Original Title"
 
 #: assets\templates\movies\movie.html:140
 #: assets\templates\tv-shows\episode.html:73
 #: assets\templates\tv-shows\show.html:103
 msgid "Play Count"
-msgstr ""
+msgstr "Play Count"
 
 #: assets\templates\movies\movie.html:85
 #: assets\templates\tv-shows\episode.html:54
 #: assets\templates\tv-shows\show.html:64
 msgid "Plot"
-msgstr ""
+msgstr "Plot"
 
 #: assets\templates\movies\movie.html:78
 msgid "Plot Outline"
-msgstr ""
+msgstr "Plot Outline"
 
 #: assets\templates\about.html:29
 msgid "Powered By"
-msgstr ""
+msgstr "Powered By"
 
 #: assets\templates\tv-shows\show.html:45
 msgid "Premiered"
-msgstr ""
+msgstr "Premiered"
 
 #: assets\templates\about.html:13
 msgid "Project Page"
-msgstr ""
+msgstr "Project Page"
 
 #: assets\templates\movies\movie.html:164
 #: assets\templates\tv-shows\episode.html:97
 #: assets\templates\tv-shows\show.html:132
 msgid "Rating"
-msgstr ""
+msgstr "Rating"
 
 #: assets\templates\movies\movie.html:176
 #: assets\templates\tv-shows\episode.html:85
 msgid "Runtime"
-msgstr ""
+msgstr "Runtime"
 
 #: assets\templates\movies\movie.html:179
 #: assets\templates\tv-shows\episode.html:88
 msgid "runtime in seconds"
-msgstr ""
+msgstr "runtime in seconds"
 
 #: assets\templates\movies\movie.html:207
 #: assets\templates\tv-shows\episode.html:109
 #: assets\templates\tv-shows\show.html:144
 msgid "Save"
-msgstr ""
+msgstr "Save"
 
 #: assets\templates\tv-shows\episode.html:3
 #: assets\templates\tv-shows\season.html:3
 #: assets\templates\tv-shows\show.html:157
 msgid "Season"
-msgstr ""
+msgstr "Season"
 
 #: assets\templates\movies\movie.html:182
 #: assets\templates\tv-shows\episode.html:91
 msgid "seconds"
-msgstr ""
+msgstr "seconds"
 
 #: assets\templates\movies\movie.html:104
 msgid "Set"
-msgstr ""
+msgstr "Set"
 
 #: assets\templates\movies\movie.html:57
 #: assets\templates\tv-shows\show.html:52
 msgid "Sort Title"
-msgstr ""
+msgstr "Sort Title"
 
 #: assets\templates\movies\movie.html:133
 #: assets\templates\tv-shows\show.html:83
 msgid "Studio"
-msgstr ""
+msgstr "Studio"
 
 #: assets\templates\about.html:15
 msgid "Support Thread"
-msgstr ""
+msgstr "Support Thread"
 
 #: assets\templates\movies\movie.html:71
 msgid "Tag Line"
-msgstr ""
+msgstr "Tag Line"
 
 #: assets\templates\movies\movie.html:97
 #: assets\templates\tv-shows\show.html:76
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 #: assets\templates\tv-shows\show.html:120
 msgid "The TVDb Id"
-msgstr ""
+msgstr "The TVDb Id"
 
 #: assets\templates\movies\movie.html:45
 #: assets\templates\tv-shows\episode.html:35
 #: assets\templates\tv-shows\show.html:40
 msgid "Title"
-msgstr ""
+msgstr "Title"
 
 #: assets\templates\movies\movie.html:200
 msgid "Trailer"
-msgstr ""
+msgstr "Trailer"
 
 #: assets\templates\movies\movie.html:109
 msgid "TV Show Link"
-msgstr ""
+msgstr "TV Show Link"
 
-#: assets\templates\tv-shows\index.html:3
-#: index.html:34
+#: assets\templates\tv-shows\index.html:3 index.html:34
 msgid "TV Shows"
-msgstr ""
+msgstr "TV Shows"
 
 #: common\services\video-library-service.js:66
 msgid "Unable to parse %s as a float. [%s]"
-msgstr ""
+msgstr "Unable to parse %s as a float. [%s]"
 
 #: common\services\video-library-service.js:57
 msgid "Unable to parse %s as an integer. [%s]"
-msgstr ""
+msgstr "Unable to parse %s as an integer. [%s]"
 
 #: assets\templates\movies\movie.html:158
 #: assets\templates\tv-shows\show.html:126
 msgid "View"
-msgstr ""
+msgstr "View"
 
 #: assets\templates\movies\movie.html:169
 #: assets\templates\tv-shows\episode.html:102
 #: assets\templates\tv-shows\show.html:137
 msgid "Votes"
-msgstr ""
+msgstr "Votes"
 
 #: assets\templates\about.html:3
 msgid "Web Interface Media Manager"
-msgstr ""
+msgstr "Web Interface Media Manager"
 
 #: assets\templates\movies\movie.html:121
 #: assets\templates\tv-shows\episode.html:66
 msgid "Writer"
-msgstr ""
+msgstr "Writer"
 
 #: assets\templates\movies\movie.html:50
 msgid "Year"
-msgstr ""
+msgstr "Year"
+
+#~ msgid "Unable to parse %s as a float."
+#~ msgstr "Unable to parse %s as a float."
+
+#~ msgid "Unable to parse %s as an integer."
+#~ msgstr "Unable to parse %s as an integer."

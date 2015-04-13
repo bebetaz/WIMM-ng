@@ -1,6 +1,6 @@
 <header class="row">
   <div class="small-12 columns">
-    <h1><a ui-sref="tvShow({tvshowid: tvShow.tvshowid})">{{tvShow.title}}</a> / <a ui-sref="tvSeason({tvshowid: tvShow.tvshowid, season: episode.season})">Season {{episode.season}}</a> / <small>{{episode.episode}}</small> {{episode.title}}</h1>
+    <h1><a ui-sref="tvShow({tvshowid: tvShow.tvshowid})">{{tvShow.title}}</a> / <a ui-sref="tvSeason({tvshowid: tvShow.tvshowid, season: episode.season})"><span translate>Season</span> {{episode.season}}</a> / <small>{{episode.episode}}</small> {{episode.title}}</h1>
   </div>
 </header>
 
@@ -29,84 +29,84 @@ Library.Id episodeid
 
 <main class="row">
   <div class="small-12 columns">
-    <form>
+    <form name="myForm">
       <div class="row"><!-- title|firstaired -->
         <div class="small-12 medium-9 columns"><!-- title -->
-          <label>Title
+          <label><span translate>Title</span>
             <input type="text" name="title" required ng-model="episode.title">
           </label>
         </div><!-- /title -->
         <div class="small-12 medium-3 columns"><!-- firstaired -->
-          <label>First Aired
+          <label><span translate>First Aired</span>
             <input type="date" name="firstaired" wimm-convert-date placeholder="yyyy-mm-dd" ng-model="episode.firstaired">
           </label>
         </div><!-- /firstaired -->
       </div><!-- /title|firstaired -->
       <div class="row"><!-- originaltitle -->
         <div class="small-12 columns">
-          <label>Original Title
+          <label><span translate>Original Title</span>
             <input type="text" name="originaltitle" ng-model="episode.originaltitle">
           </label>
         </div>
       </div><!-- /originaltitle -->
       <div class="row"><!-- plot -->
         <div class="small-12 columns">
-          <label>Plot
+          <label><span translate>Plot</span>
             <textarea name="plot" rows="5" ng-model="episode.plot"></textarea>
           </label>
         </div>
       </div><!-- /plot -->
       <div class="row"><!-- director|writer -->
         <div class="small-12 medium-6 columns"><!-- director -->
-          <label>Director
-            <textarea name="director" wimm-array-to-list placeholder="one director per line" ng-model="episode.director"></textarea>
+          <label><span translate>Director</span>
+            <textarea name="director" wimm-array-to-list placeholder="{{'one director per line'|translate}}" ng-model="episode.director"></textarea>
           </label>
         </div><!-- /director -->
         <div class="small-12 medium-6 columns"><!-- writer -->
-          <label>Writer
-            <textarea name="writer" wimm-array-to-list placeholder="one writer per line" ng-model="episode.writer"></textarea>
+          <label><span translate>Writer</span>
+            <textarea name="writer" wimm-array-to-list placeholder="{{'one writer per line'|translate}}" ng-model="episode.writer"></textarea>
           </label>
         </div><!-- /writer -->
       </div><!-- /director|writer -->
       <div class="row"><!-- playcount|lastplayed -->
         <div class="small-12 medium-3 columns"><!-- playcount -->
-          <label>Play Count
+          <label><span translate>Play Count</span>
             <input type="number" name="playcount" min="0" wimm-string-to-number ng-model="episode.playcount">
           </label>
         </div><!-- /playcount -->
         <div class="small-12 medium-9 columns"><!-- lastplayed -->
-          <label>Last Played
-            <input type="text" name="lastplayed" placeholder="Never" disabled ng-model="episode.lastplayed">
+          <label><span translate>Last Played</span>
+            <input type="text" name="lastplayed" placeholder="{{'Never'|translate}}" disabled ng-model="episode.lastplayed">
           </label>
         </div><!-- /lastplayed -->
       </div><!-- /playcount|lastplayed -->
       <div class="row"><!-- runtime|rating|votes -->
         <div class="small-12 medium-4 columns"><!-- runtime -->
-          <label>Runtime
+          <label><span translate>Runtime</span>
             <div class="row collapse">
               <div class="small-9 columns">
-                <input type="number" name="runtime" min="0" wimm-string-to-number placeholder="runtime in seconds" ng-model="episode.runtime">
+                <input type="number" name="runtime" min="0" wimm-string-to-number placeholder="{{'runtime in seconds'|translate}}" ng-model="episode.runtime">
               </div>
               <div class="small-3 columns">
-                <span class="postfix">seconds</span>
+                <span class="postfix" translate>seconds</span>
               </div>
             </div>
           </label>
         </div><!-- /runtime -->
         <div class="small-12 medium-4 columns"><!-- rating -->
-          <label>Rating
-            <input type="number" name="rating" min="0" wimm-string-to-number ng-model="episode.rating">
+          <label><span translate>Rating</span>
+            <input type="number" name="rating" min="0" step="any" wimm-string-to-number ng-model="episode.rating">
           </label>
         </div><!-- /rating -->
         <div class="small-12 medium-4 columns"><!-- votes -->
-          <label>Votes
-            <input type="number" name="votes" min="0" wimm-string-to-number placeholder="None" ng-model="episode.votes">
+          <label><span translate>Votes</span>
+            <input type="number" name="votes" min="0" wimm-string-to-number placeholder="{{'None'|translate}}" ng-model="episode.votes">
           </label>
         </div><!-- /imdbnumber -->
       </div><!-- /imdbnumber|rating|votes -->
       <div class="row">
         <div class="small-12 columns">
-          <a ng-click="saveChanges()" class="button expand" role="button">Save</a>
+          <button ng-click="saveChanges(episode.episodeid, myForm)" ng-disabled="myForm.$pristine" ng-class="{success: myForm.$submitted}" class="button expand" role="button" translate>Save</button>
         </div>
       </div>
     </form>

@@ -6,10 +6,10 @@
     .directive('wimmStringToNumber', wimmStringToNumber);
 
   function wimmStringToNumber() {
-      return {
-        restrict: 'A',
-        require: 'ngModel',
-        link: wimmStringToNumberLink
+    return {
+      restrict: 'A',
+      require: 'ngModel',
+      link: wimmStringToNumberLink
     };
   }
 

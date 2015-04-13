@@ -6,10 +6,10 @@
     .directive('wimmArrayToList', wimmArrayToList);
 
   function wimmArrayToList() {
-      return {
-        restrict: 'A',
-        require: 'ngModel',
-        link: wimmArrayToListLink
+    return {
+      restrict: 'A',
+      require: 'ngModel',
+      link: wimmArrayToListLink
     };
   }
 

@@ -26,13 +26,12 @@
       });
   }
 
-  function getMovies(VideoLibraryService)
-  {
+  function getMovies(VideoLibraryService) {
     return VideoLibraryService.getMovies();
   }
 
   function getMovie(VideoLibraryService, $stateParams) {
-    return VideoLibraryService.getMovie($stateParams.movieid);
+    return VideoLibraryService.getMovieDetails($stateParams.movieid);
   }
 
 }(window.angular));

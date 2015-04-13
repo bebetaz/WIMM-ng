@@ -42,7 +42,6 @@
       'director', 'plot', 'rating', 'votes', 'lastplayed', 'writer',
       'firstaired', 'season', 'episode', 'originaltitle'];
 
-
     function postLoadCleanUp(value, fieldName) {
       /*jshint validthis:true */
 
@@ -55,7 +54,7 @@
 
         if (isNaN(this[fieldName])) {
           this[fieldName] = value;
-          $log.error(gettext('Unable to parse %s as an integer.'),
+          $log.error(gettext('Unable to parse %s as an integer. [%s]'),
             fieldName, value);
         }
       }
@@ -64,7 +63,7 @@
 
         if (isNaN(this.rating)) {
           this.rating = value;
-          $log.error(gettext('Unable to parse %s as a float.'),
+          $log.error(gettext('Unable to parse %s as a float. [%s]'),
             fieldName, value);
         }
       }
@@ -77,6 +76,9 @@
           value &&
           value === $filter('wimmRemoveArticle')(this.title)) {
         this[fieldName] = null;
+      }
+      else if (fieldName === 'votes') {
+        this[fieldName] = value.toString();
       }
       else if (fieldName === 'rating') {
         this[fieldName] = parseFloat(value.toFixed(1));
@@ -139,7 +141,7 @@
      * @see [VideoLibrary.GetMovieDetails]{@link
      *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.GetMovieDetails}
      */
-    Service.getMovie = function(movieid) {
+    Service.getMovieDetails = function(movieid) {
       if (movieid < 0) {
         $log.error(
           'kodi.VideoLibraryService#getMovie: movieid must be >= 0.',
@@ -175,7 +177,7 @@
      * @see [VideoLibrary.SetMovieDetails]{@link
      *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.SetMovieDetails}
      */
-    Service.saveMovie = function(movieid, updates) {
+    Service.setMovieDetails = function(movieid, updates) {
       angular.forEach(updates, preSaveCleanUp, updates);
       updates.movieid = movieid;
 
@@ -210,8 +212,28 @@
       }
 
       var promise = Service.ws.sendCommand('VideoLibrary.GetTVShows', params);
-      // Storing in a variable for clarity on what's being returned
-      return promise;
+      var defer = $q.defer();
+
+      promise.then(
+        function(result) {
+          if (result.tvshows) {
+            for (var i = 0; i < result.tvshows.length; i++) {
+              angular
+                .forEach(result.tvshows[i], postLoadCleanUp, result.tvshows[i]);
+            }
+          }
+          else {
+            result.tvshows = [];
+          }
+
+          defer.resolve(result);
+        },
+        function(error) {
+          defer.reject(error);
+        }
+      );
+
+      return defer.promise;
     };
 
     /**
@@ -221,7 +243,7 @@
      * @see [VideoLibrary.GetTVShowDetails]{@link
      *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.GetMovieDetails}
      */
-    Service.getTVShow = function(tvshowid) {
+    Service.getTVShowDetails = function(tvshowid) {
       if (tvshowid < 0) {
         $log.error(
           'kodi.VideoLibraryService#getTVShow: tvshowid must be >= 0.',
@@ -233,8 +255,21 @@
         tvshowid: tvshowid,
         properties: tvShowDetailedProperties
       });
-      // Storing in a variable for clarity on what's being returned
-      return promise;
+      var defer = $q.defer();
+
+      promise.then(
+        function(result) {
+          angular
+            .forEach(result.tvshowdetails, postLoadCleanUp,
+                     result.tvshowdetails);
+          defer.resolve(result);
+        },
+        function(error) {
+          defer.reject(error);
+        }
+      );
+
+      return defer.promise;
     };
 
     /**
@@ -281,8 +316,29 @@
         season: season,
         properties: episodeBasicProperties
       });
-      // Storing in a variable for clarity on what's being returned
-      return promise;
+      var defer = $q.defer();
+
+      promise.then(
+        function(result) {
+          if (result.episodes) {
+            for (var i = 0; i < result.episodes.length; i++) {
+              angular
+                .forEach(result.episodes[i], postLoadCleanUp,
+                         result.episodes[i]);
+            }
+          }
+          else {
+            result.episodes = [];
+          }
+
+          defer.resolve(result);
+        },
+        function(error) {
+          defer.reject(error);
+        }
+      );
+
+      return defer.promise;
     };
 
     /**
@@ -293,7 +349,7 @@
      * @see [VideoLibrary.GetEpisodeDetails]{@link
      *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.GetEpisodeDetails}
      */
-    Service.getEpisode = function(tvshowid, episodeid) {
+    Service.getEpisodeDetails = function(tvshowid, episodeid) {
       if (tvshowid < 0) {
         $log.error(
           'kodi.VideoLibraryService#getSeasons: tvshowid must be >= 0.',
@@ -305,8 +361,21 @@
         episodeid: episodeid,
         properties: episodeDetailedProperties
       });
-      // Storing in a variable for clarity on what's being returned
-      return promise;
+      var defer = $q.defer();
+
+      promise.then(
+        function(result) {
+          angular
+            .forEach(result.episodedetails, postLoadCleanUp,
+                     result.episodedetails);
+          defer.resolve(result);
+        },
+        function(error) {
+          defer.reject(error);
+        }
+      );
+
+      return defer.promise;
     };
 
     /**
@@ -316,11 +385,12 @@
      * @see [VideoLibrary.SetTVShowDetails]{@link
      *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.SetTVShowDetails}
      */
-    Service.setTVShowDetails = function(data) {
-      delete data.label;
+    Service.setTVShowDetails = function(tvshowid, updates) {
+      angular.forEach(updates, preSaveCleanUp, updates);
+      updates.tvshowid = tvshowid;
 
       var promise = Service.ws.sendCommand('VideoLibrary.SetTVShowDetails',
-                                           data);
+                                           updates);
       // Storing in a variable for clarity on what's being returned
       return promise;
     };
@@ -332,11 +402,12 @@
      * @see [VideoLibrary.SetEpisodeDetails]{@link
      *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.SetEpisodeDetails}
      */
-    Service.setEpisodeDetails = function(data) {
-      delete data.label;
+    Service.setEpisodeDetails = function(episodeid, updates) {
+      angular.forEach(updates, preSaveCleanUp, updates);
+      updates.episodeid = episodeid;
 
       var promise = Service.ws.sendCommand('VideoLibrary.SetEpisodeDetails',
-                                           data);
+                                           updates);
       // Storing in a variable for clarity on what's being returned
       return promise;
     };

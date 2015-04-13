@@ -3,9 +3,9 @@
 
   angular
     .module('WIMM.common')
-    .filter('artworkUrl', function() { return artworkUrl; });
+    .filter('wimmArtworkUrl', function() { return wimmArtworkUrl; });
 
-  function artworkUrl(value) {
+  function wimmArtworkUrl(value) {
     var url = '';
 
     if (value) {

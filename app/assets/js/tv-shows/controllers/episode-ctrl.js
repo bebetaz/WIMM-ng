@@ -2,13 +2,14 @@
   'use strict';
 
   angular
-    .module('WIMM.movies')
-    .controller('MovieCtrl', movieCtrl);
+    .module('WIMM.tvShows')
+    .controller('EpisodeCtrl', episodeCtrl);
 
-  function movieCtrl($scope, VideoLibraryService, movie) {
-    $scope.movie = movie.moviedetails;
+  function episodeCtrl($scope, VideoLibraryService, tvShow, episode) {
+    $scope.tvShow = tvShow.tvshowdetails;
+    $scope.episode = episode.episodedetails;
 
-    $scope.saveChanges = function saveChanges(movieid, form) {
+    $scope.saveChanges = function saveChanges(episodeid, form) {
       var changes = {};
       angular.forEach(form, checkForChanges, changes);
 
@@ -19,7 +20,7 @@
         return;
       }
 
-      VideoLibraryService.setMovieDetails(movieid, changes)
+      VideoLibraryService.setEpisodeDetails(episodeid, changes)
         .then(function(result) {
           if (result === 'OK') {
             form.$setSubmitted();

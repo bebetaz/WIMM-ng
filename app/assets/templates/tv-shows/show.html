@@ -34,114 +34,114 @@ Library.Id tvshowid
 <tabset>
   <tab heading="Details">
 
-      <form name="form">
+      <form name="myForm">
         <div class="row"><!-- title|year -->
           <div class="small-12 medium-9 columns"><!-- title -->
-            <label>Title
+            <label><span translate>Title</span>
               <input type="text" name="title" required ng-model="tvShow.title">
             </label>
           </div><!-- /title -->
           <div class="small-12 medium-3 columns"><!-- year -->
-            <label>Premiered
+            <label><span translate>Premiered</span>
               <input type="date" name="premiered" wimm-convert-date placeholder="yyyy-mm-dd" ng-model="tvShow.premiered">
             </label>
           </div><!-- /year -->
         </div><!-- /title|year -->
         <div class="row"><!-- sorttitle|originaltitle -->
           <div class="small-12 medium-6 columns"><!-- sorttitle -->
-            <label>Sort Title
-              <input type="text" name="sorttitle" placeholder="defaults to the shows title" ng-model="tvShow.sortitle">
+            <label><span translate>Sort Title</span>
+              <input type="text" name="sorttitle" placeholder="{{'defaults to the shows title'|translate}}" ng-model="tvShow.sorttitle">
             </label>
           </div><!-- /sorttitle -->
           <div class="small-12 medium-6 columns"><!-- originaltitle -->
-            <label>Original Title
+            <label><span translate>Original Title</span>
               <input type="text" name="originaltitle" ng-model="tvShow.originaltitle">
             </label>
           </div><!-- /originaltitle -->
         </div><!-- /sorttitle|originaltitle -->
         <div class="row"><!-- plot -->
           <div class="small-12 columns">
-            <label>Plot
+            <label><span translate>Plot</span>
               <textarea name="plot" rows="5" ng-model="tvShow.plot"></textarea>
             </label>
           </div>
         </div><!-- /plot -->
         <div class="row"><!-- genre|tag -->
           <div class="small-12 medium-6 columns"><!-- genre -->
-            <label>Genre
-              <textarea name="genre" wimm-array-to-list placeholder="one genre per line" ng-model="tvShow.genre"></textarea>
+            <label><span translate>Genre</span>
+              <textarea name="genre" wimm-array-to-list placeholder="{{'one genre per line'|translate}}" ng-model="tvShow.genre"></textarea>
             </label>
           </div><!-- /genre -->
           <div class="small-12 medium-6 columns"><!-- tag -->
-            <label>Tags
-              <textarea name="tag" wimm-array-to-list placeholder="one tag per line" ng-model="tvShow.tag"></textarea>
+            <label><span translate>Tags</span>
+              <textarea name="tag" wimm-array-to-list placeholder="{{'one tag per line'|translate}}" ng-model="tvShow.tag"></textarea>
             </label>
           </div><!-- /tag -->
         </div><!-- /genre|tag -->
         <div class="row"><!-- studio -->
           <div class="small-12 columns">
-            <label>Studio
-              <textarea name="studio" wimm-array-to-list placeholder="one studio per line" ng-model="tvShow.studio"></textarea>
+            <label><span translate>Studio</span>
+              <textarea name="studio" wimm-array-to-list placeholder="{{'one studio per line'|translate}}" ng-model="tvShow.studio"></textarea>
             </label>
           </div>
         </div><!-- /studio -->
         <div class="row"><!-- episodeguide|mpaa -->
           <div class="small-12 medium-8 columns"><!-- episodeguide -->
-            <label>Episode Guide
+            <label><span translate>Episode Guide</span>
               <!-- NOTE: disabled for now it's an XML blob :-( -->
               <input type="text" name="episodeguide" disabled ng-model="tvShow.episodeguide">
             </label>
           </div><!-- /episodeguide -->
           <div class="small-12 medium-4 columns"><!-- mpaa -->
-            <label>Content Rating
+            <label><span translate>Content Rating</span>
               <input type="text" name="mpaa" ng-model="tvShow.mpaa">
             </label>
           </div><!-- /mpaa -->
         </div><!-- /episodeguide|mpaa -->
         <div class="row"><!-- playcount|lastplayed -->
           <div class="small-12 medium-3 columns"><!-- playcount -->
-            <label>Play Count
+            <label><span translate>Play Count</span>
               <input type="number" name="playcount" min="0" wimm-string-to-number placeholder="0" ng-model="tvShow.playcount">
             </label>
           </div><!-- /playcount -->
           <div class="small-12 medium-9 columns"><!-- lastplayed -->
-            <label>Last Played
+            <label><span translate>Last Played</span>
               <!-- NOTE: need a input[datetime] implementation and locale date
                          formats need handled i.e. US: mm/dd/yyyy UK: dd/mm/yyyy
 
                          disabled for now so user can't input rubbish
               -->
-              <input type="text" name="lastplayed" placeholder="Never" ng-model="tvShow.lastplayed" disabled>
+              <input type="text" name="lastplayed" placeholder="{{'Never'|translate}}" ng-model="tvShow.lastplayed" disabled>
             </label>
           </div><!-- /lastplayed -->
         </div><!-- /playcount|lastplayed -->
         <div class="row"><!-- imdbnumber|rating|votes -->
           <div class="small-12 medium-4 columns"><!-- imdbnumber -->
-            <label>The TVDb Id
+            <label><span translate>The TVDb Id</span>
               <div class="row collapse">
                 <div class="small-10 columns">
                   <input type="text" name="imdbnumber" ng-model="tvShow.imdbnumber">
                 </div>
                 <div class="small-2 columns">
-                  <a ng-click="viewTvDbPage(tvShow.imdbnumber)" class="button postfix">View</a>
+                  <a ng-click="viewTvDbPage(tvShow.imdbnumber)" class="button postfix" translate>View</a>
                 </div>
               </div>
             </label>
           </div><!-- /imdbnumber -->
           <div class="small-12 medium-4 columns"><!-- rating -->
-            <label>Rating
+            <label><span translate>Rating</span>
               <input type="number" name="rating" min="0" step="any" wimm-string-to-number ng-model="tvShow.rating">
             </label>
           </div><!-- /rating -->
           <div class="small-12 medium-4 columns"><!-- votes -->
-            <label>Votes
-              <input type="number" name="votes" min="0" wimm-string-to-number placeholder="None" ng-model="tvShow.votes">
+            <label><span translate>Votes</span>
+              <input type="number" name="votes" min="0" wimm-string-to-number placeholder="{{'None'|translate}}" ng-model="tvShow.votes">
             </label>
           </div><!-- /imdbnumber -->
         </div><!-- /imdbnumber|rating|votes -->
         <div class="row">
           <div class="small-12 columns">
-            <a ng-click="saveChanges()" class="button expand" role="button">Save</a>
+            <button ng-click="saveChanges(tvShow.tvshowid, myForm)" ng-disabled="myForm.$pristine" ng-class="{success: myForm.$submitted}" class="button expand" role="button" translate>Save</button>
           </div>
         </div>
       </form>
@@ -152,9 +152,9 @@ Library.Id tvshowid
     <ul class="small-block-grid-2 medium-block-grid-4 xlarge-block-grid-6">
       <li ng-repeat="season in seasons.seasons">
         <a class="th" role="button" aria-label="Thumbnail" ui-sref="tvSeason({tvshowid: tvShow.tvshowid, season: season.season})">
-          <img ng-src="{{season.thumbnail | artworkUrl}}">
+          <img ng-src="{{season.thumbnail | wimmArtworkUrl}}">
         </a>
-        <a ui-sref="tvSeason({tvshowid: tvShow.tvshowid, season: season.season})" class="small button expand" role="button">Season {{season.season}}</a>
+        <a ui-sref="tvSeason({tvshowid: tvShow.tvshowid, season: season.season})" class="small button expand" role="button"><span translate>Season</span> {{season.season}}</a>
       </li>
     </ul>
 
