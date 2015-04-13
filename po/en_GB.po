@@ -1,16 +1,16 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en_GB\n"
 "MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.7.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en_GB\n"
 
 #: assets\templates\about.html:4
 msgid "A web interface for managing the Kodi media library."
@@ -265,12 +265,12 @@ msgid "TV Shows"
 msgstr "TV Shows"
 
 #: common\services\video-library-service.js:66
-msgid "Unable to parse %s as a float."
-msgstr "Unable to parse %s as a float."
+msgid "Unable to parse %s as a float. [%s]"
+msgstr "Unable to parse %s as a float. [%s]"
 
 #: common\services\video-library-service.js:57
-msgid "Unable to parse %s as an integer."
-msgstr "Unable to parse %s as an integer."
+msgid "Unable to parse %s as an integer. [%s]"
+msgstr "Unable to parse %s as an integer. [%s]"
 
 #: assets\templates\movies\movie.html:158
 #: assets\templates\tv-shows\show.html:126
@@ -295,3 +295,9 @@ msgstr "Writer"
 #: assets\templates\movies\movie.html:50
 msgid "Year"
 msgstr "Year"
+
+#~ msgid "Unable to parse %s as a float."
+#~ msgstr "Unable to parse %s as a float."
+
+#~ msgid "Unable to parse %s as an integer."
+#~ msgstr "Unable to parse %s as an integer."

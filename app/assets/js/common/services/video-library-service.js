@@ -54,7 +54,7 @@
 
         if (isNaN(this[fieldName])) {
           this[fieldName] = value;
-          $log.error(gettext('Unable to parse %s as an integer.'),
+          $log.error(gettext('Unable to parse %s as an integer. [%s]'),
             fieldName, value);
         }
       }
@@ -63,7 +63,7 @@
 
         if (isNaN(this.rating)) {
           this.rating = value;
-          $log.error(gettext('Unable to parse %s as a float.'),
+          $log.error(gettext('Unable to parse %s as a float. [%s]'),
             fieldName, value);
         }
       }
