@@ -261,11 +261,11 @@ msgstr ""
 msgid "TV Shows"
 msgstr ""
 
-#: common\services\video-library-service.js:67
+#: common\services\video-library-service.js:66
 msgid "Unable to parse %s as a float."
 msgstr ""
 
-#: common\services\video-library-service.js:58
+#: common\services\video-library-service.js:57
 msgid "Unable to parse %s as an integer."
 msgstr ""
 
