@@ -11,7 +11,7 @@
   // starts a test server, which you can view at http://localhost:8080
   gulp.task('server:start', function() {
     plugins.connect.server({
-      root: './build',
+      root: './build/webinterface.wimm-ng',
       middleware: function() {
         return [
           modRewrite(['^[^\\.]*$ /index.html [L]'])

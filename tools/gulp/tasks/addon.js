@@ -20,7 +20,7 @@
       .src('addon/addon.xml')
       .pipe(plugins.replace('%ADDON_VERSION%', pkg.version))
       .pipe(plugins.replace('%ADDON_WIEXT%', wiext))
-      .pipe(gulp.dest('build/'));
+      .pipe(gulp.dest('build/webinterface.wimm-ng'));
   });
 
   gulp.task('addon', ['addon.xml'], function() {
@@ -34,7 +34,7 @@
 
     return gulp.src(['addon/fanart.jpg', 'addon/icon.png'])
         .pipe(displaySize({showFiles: true}))
-        .pipe(gulp.dest('build'));
+        .pipe(gulp.dest('build/webinterface.wimm-ng'));
   });
 
 }());
