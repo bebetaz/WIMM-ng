@@ -67,6 +67,22 @@
     $scope.init = function() {
       $log.log('Thunderbirds are go!');
       KodiWebSocketService.connect();
+
+      KodiWebSocketService.sendCommand('JSONRPC.Version')
+        .then(function(result) {
+          $scope.apiVersion = result.version.major + '.' +
+                              result.version.minor + '.' +
+                              result.version.patch;
+        });
+
+      KodiWebSocketService.sendCommand('Application.GetProperties',
+                                       {properties: ['version']})
+        .then(function(result) {
+          $scope.kodiVersion = result.version.major + '.' +
+                              result.version.minor;
+          $scope.kodiVersionExtra = result.version.tag + '-' +
+                                    result.version.revision;
+        });
     };
 
     $rootScope.$on('$stateChangeStart',
