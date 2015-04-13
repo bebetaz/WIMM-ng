@@ -26,8 +26,7 @@
       });
   }
 
-  function getMovies(VideoLibraryService)
-  {
+  function getMovies(VideoLibraryService) {
     return VideoLibraryService.getMovies();
   }
 

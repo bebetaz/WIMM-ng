@@ -46,8 +46,7 @@
       });
   }
 
-  function getShows(VideoLibraryService)
-  {
+  function getShows(VideoLibraryService) {
     return VideoLibraryService.getTVShows();
   }
 

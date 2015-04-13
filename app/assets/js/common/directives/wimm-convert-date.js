@@ -6,10 +6,10 @@
     .directive('wimmConvertDate', wimmConvertDate);
 
   function wimmConvertDate() {
-      return {
-        restrict: 'A',
-        require: 'ngModel',
-        link: wimmConvertDateLink
+    return {
+      restrict: 'A',
+      require: 'ngModel',
+      link: wimmConvertDateLink
     };
   }
 
@@ -20,7 +20,7 @@
 
     function format(text) {
       var parts = text.split('-');
-      var dt = new Date(parts[0], parts[1]-1, parts[2]);
+      var dt = new Date(parts[0], parts[1] - 1, parts[2]);
       return dt;
     }
 

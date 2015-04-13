@@ -42,7 +42,6 @@
       'director', 'plot', 'rating', 'votes', 'lastplayed', 'writer',
       'firstaired', 'season', 'episode', 'originaltitle'];
 
-
     function postLoadCleanUp(value, fieldName) {
       /*jshint validthis:true */
 
