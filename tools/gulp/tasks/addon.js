@@ -7,6 +7,7 @@
   var semver      = require('semver');
 
   // plugins: (loaded through gulp-load-plugins)
+  //  gulp-rename
   //  gulp-replace
   //  gulp-size
   //  gulp-util
@@ -30,7 +31,8 @@
 
     gulp.src('CHANGELOG.md')
         .pipe(displaySize({showFiles: true}))
-        .pipe(gulp.dest('build/webinterface.wimm-ng/changelog.txt'));
+        .pipe(plugins.rename('changelog.txt'))
+        .pipe(gulp.dest('build/webinterface.wimm-ng'));
 
     return gulp.src(['addon/fanart.jpg', 'addon/icon.png'])
         .pipe(displaySize({showFiles: true}))
