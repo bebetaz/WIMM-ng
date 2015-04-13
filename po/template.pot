@@ -8,12 +8,36 @@ msgstr ""
 msgid "A web interface for managing the Kodi media library."
 msgstr ""
 
+#: assets\templates\movies\movie.html:188
+msgid "Content Rating"
+msgstr ""
+
+#: assets\templates\movies\movie.html:128
+msgid "Country"
+msgstr ""
+
+#: assets\templates\movies\movie.html:116
+msgid "Director"
+msgstr ""
+
 #: assets\templates\about.html:24
 msgid "Forums"
 msgstr ""
 
+#: assets\templates\movies\movie.html:92
+msgid "Genre"
+msgstr ""
+
 #: assets\templates\about.html:22
 msgid "Home Page"
+msgstr ""
+
+#: assets\templates\movies\movie.html:152
+msgid "IMDb Id"
+msgstr ""
+
+#: assets\templates\movies\movie.html:193
+msgid "IMDb Top 250"
 msgstr ""
 
 #: assets\templates\about.html:14
@@ -24,11 +48,15 @@ msgstr ""
 msgid "JSON-RPC API"
 msgstr ""
 
+#: assets\templates\movies\movie.html:145
+msgid "Last Played"
+msgstr ""
+
 #: index.html:27
 msgid "Menu"
 msgstr ""
 
-#: assets\templates\movies\index.html:1
+#: assets\templates\movies\index.html:3
 #: index.html:33
 msgid "Movies"
 msgstr ""
@@ -43,15 +71,30 @@ msgstr ""
 msgid "Music Videos"
 msgstr ""
 
-#: app.js:65
-#: app.js:67
+#: app.js:62
+#: app.js:64
 msgid "not connected"
 msgstr ""
 
-#: assets\templates\movies\index.html:2
 #: assets\templates\music-videos\index.html:2
 #: assets\templates\music\index.html:2
 msgid "Not implemented yet."
+msgstr ""
+
+#: assets\templates\movies\movie.html:64
+msgid "Original Title"
+msgstr ""
+
+#: assets\templates\movies\movie.html:140
+msgid "Play Count"
+msgstr ""
+
+#: assets\templates\movies\movie.html:85
+msgid "Plot"
+msgstr ""
+
+#: assets\templates\movies\movie.html:78
+msgid "Plot Outline"
 msgstr ""
 
 #: assets\templates\about.html:29
@@ -62,8 +105,56 @@ msgstr ""
 msgid "Project Page"
 msgstr ""
 
+#: assets\templates\movies\movie.html:164
+msgid "Rating"
+msgstr ""
+
+#: assets\templates\movies\movie.html:176
+msgid "Runtime"
+msgstr ""
+
+#: assets\templates\movies\movie.html:207
+msgid "Save"
+msgstr ""
+
+#: assets\templates\movies\movie.html:182
+msgid "seconds"
+msgstr ""
+
+#: assets\templates\movies\movie.html:104
+msgid "Set"
+msgstr ""
+
+#: assets\templates\movies\movie.html:57
+msgid "Sort Title"
+msgstr ""
+
+#: assets\templates\movies\movie.html:133
+msgid "Studio"
+msgstr ""
+
 #: assets\templates\about.html:15
 msgid "Support Thread"
+msgstr ""
+
+#: assets\templates\movies\movie.html:71
+msgid "Tag Line"
+msgstr ""
+
+#: assets\templates\movies\movie.html:97
+msgid "Tags"
+msgstr ""
+
+#: assets\templates\movies\movie.html:45
+msgid "Title"
+msgstr ""
+
+#: assets\templates\movies\movie.html:200
+msgid "Trailer"
+msgstr ""
+
+#: assets\templates\movies\movie.html:109
+msgid "TV Show Link"
 msgstr ""
 
 #: assets\templates\tv-shows\index.html:3
@@ -71,6 +162,30 @@ msgstr ""
 msgid "TV Shows"
 msgstr ""
 
+#: common\services\video-library-service.js:67
+msgid "Unable to parse %s as a float."
+msgstr ""
+
+#: common\services\video-library-service.js:58
+msgid "Unable to parse %s as an integer."
+msgstr ""
+
+#: assets\templates\movies\movie.html:158
+msgid "View"
+msgstr ""
+
+#: assets\templates\movies\movie.html:169
+msgid "Votes"
+msgstr ""
+
 #: assets\templates\about.html:3
 msgid "Web Interface Media Manager"
+msgstr ""
+
+#: assets\templates\movies\movie.html:121
+msgid "Writer"
+msgstr ""
+
+#: assets\templates\movies\movie.html:50
+msgid "Year"
 msgstr ""
