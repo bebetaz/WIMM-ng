@@ -1,0 +1,294 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: assets\templates\about.html:4
+msgid "A web interface for managing the Kodi media library."
+msgstr ""
+
+#: assets\templates\movies\movie.html:188
+#: assets\templates\tv-shows\show.html:96
+msgid "Content Rating"
+msgstr ""
+
+#: assets\templates\movies\movie.html:128
+msgid "Country"
+msgstr ""
+
+#: assets\templates\tv-shows\show.html:53
+msgid "defaults to the shows title"
+msgstr ""
+
+#: assets\templates\movies\movie.html:116
+#: assets\templates\tv-shows\episode.html:61
+msgid "Director"
+msgstr ""
+
+#: assets\templates\tv-shows\show.html:90
+msgid "Episode Guide"
+msgstr ""
+
+#: assets\templates\tv-shows\episode.html:40
+msgid "First Aired"
+msgstr ""
+
+#: assets\templates\about.html:24
+msgid "Forums"
+msgstr ""
+
+#: assets\templates\movies\movie.html:92
+#: assets\templates\tv-shows\show.html:71
+msgid "Genre"
+msgstr ""
+
+#: assets\templates\about.html:22
+msgid "Home Page"
+msgstr ""
+
+#: assets\templates\movies\movie.html:152
+msgid "IMDb Id"
+msgstr ""
+
+#: assets\templates\movies\movie.html:193
+msgid "IMDb Top 250"
+msgstr ""
+
+#: assets\templates\about.html:14
+msgid "Issues"
+msgstr ""
+
+#: assets\templates\about.html:23
+msgid "JSON-RPC API"
+msgstr ""
+
+#: assets\templates\movies\movie.html:145
+#: assets\templates\tv-shows\episode.html:78
+#: assets\templates\tv-shows\show.html:108
+msgid "Last Played"
+msgstr ""
+
+#: index.html:27
+msgid "Menu"
+msgstr ""
+
+#: assets\templates\movies\index.html:3
+#: index.html:33
+msgid "Movies"
+msgstr ""
+
+#: assets\templates\music\index.html:1
+#: index.html:36
+msgid "Music"
+msgstr ""
+
+#: assets\templates\music-videos\index.html:1
+#: index.html:35
+msgid "Music Videos"
+msgstr ""
+
+#: assets\templates\movies\movie.html:146
+#: assets\templates\tv-shows\episode.html:79
+#: assets\templates\tv-shows\show.html:114
+msgid "Never"
+msgstr ""
+
+#: assets\templates\movies\movie.html:170
+#: assets\templates\movies\movie.html:194
+#: assets\templates\tv-shows\episode.html:103
+#: assets\templates\tv-shows\show.html:138
+msgid "None"
+msgstr ""
+
+#: app.js:62
+#: app.js:64
+msgid "not connected"
+msgstr ""
+
+#: assets\templates\music-videos\index.html:2
+#: assets\templates\music\index.html:2
+msgid "Not implemented yet."
+msgstr ""
+
+#: assets\templates\movies\movie.html:129
+msgid "one country per line"
+msgstr ""
+
+#: assets\templates\movies\movie.html:117
+#: assets\templates\tv-shows\episode.html:62
+msgid "one director per line"
+msgstr ""
+
+#: assets\templates\movies\movie.html:93
+#: assets\templates\tv-shows\show.html:72
+msgid "one genre per line"
+msgstr ""
+
+#: assets\templates\movies\movie.html:110
+msgid "one show title per line"
+msgstr ""
+
+#: assets\templates\movies\movie.html:134
+#: assets\templates\tv-shows\show.html:84
+msgid "one studio per line"
+msgstr ""
+
+#: assets\templates\movies\movie.html:98
+#: assets\templates\tv-shows\show.html:77
+msgid "one tag per line"
+msgstr ""
+
+#: assets\templates\movies\movie.html:122
+#: assets\templates\tv-shows\episode.html:67
+msgid "one writer per line"
+msgstr ""
+
+#: assets\templates\movies\movie.html:64
+#: assets\templates\tv-shows\episode.html:47
+#: assets\templates\tv-shows\show.html:57
+msgid "Original Title"
+msgstr ""
+
+#: assets\templates\movies\movie.html:140
+#: assets\templates\tv-shows\episode.html:73
+#: assets\templates\tv-shows\show.html:103
+msgid "Play Count"
+msgstr ""
+
+#: assets\templates\movies\movie.html:85
+#: assets\templates\tv-shows\episode.html:54
+#: assets\templates\tv-shows\show.html:64
+msgid "Plot"
+msgstr ""
+
+#: assets\templates\movies\movie.html:78
+msgid "Plot Outline"
+msgstr ""
+
+#: assets\templates\about.html:29
+msgid "Powered By"
+msgstr ""
+
+#: assets\templates\tv-shows\show.html:45
+msgid "Premiered"
+msgstr ""
+
+#: assets\templates\about.html:13
+msgid "Project Page"
+msgstr ""
+
+#: assets\templates\movies\movie.html:164
+#: assets\templates\tv-shows\episode.html:97
+#: assets\templates\tv-shows\show.html:132
+msgid "Rating"
+msgstr ""
+
+#: assets\templates\movies\movie.html:176
+#: assets\templates\tv-shows\episode.html:85
+msgid "Runtime"
+msgstr ""
+
+#: assets\templates\movies\movie.html:179
+#: assets\templates\tv-shows\episode.html:88
+msgid "runtime in seconds"
+msgstr ""
+
+#: assets\templates\movies\movie.html:207
+#: assets\templates\tv-shows\episode.html:109
+#: assets\templates\tv-shows\show.html:144
+msgid "Save"
+msgstr ""
+
+#: assets\templates\tv-shows\episode.html:3
+#: assets\templates\tv-shows\season.html:3
+#: assets\templates\tv-shows\show.html:157
+msgid "Season"
+msgstr ""
+
+#: assets\templates\movies\movie.html:182
+#: assets\templates\tv-shows\episode.html:91
+msgid "seconds"
+msgstr ""
+
+#: assets\templates\movies\movie.html:104
+msgid "Set"
+msgstr ""
+
+#: assets\templates\movies\movie.html:57
+#: assets\templates\tv-shows\show.html:52
+msgid "Sort Title"
+msgstr ""
+
+#: assets\templates\movies\movie.html:133
+#: assets\templates\tv-shows\show.html:83
+msgid "Studio"
+msgstr ""
+
+#: assets\templates\about.html:15
+msgid "Support Thread"
+msgstr ""
+
+#: assets\templates\movies\movie.html:71
+msgid "Tag Line"
+msgstr ""
+
+#: assets\templates\movies\movie.html:97
+#: assets\templates\tv-shows\show.html:76
+msgid "Tags"
+msgstr ""
+
+#: assets\templates\tv-shows\show.html:120
+msgid "The TVDb Id"
+msgstr ""
+
+#: assets\templates\movies\movie.html:45
+#: assets\templates\tv-shows\episode.html:35
+#: assets\templates\tv-shows\show.html:40
+msgid "Title"
+msgstr ""
+
+#: assets\templates\movies\movie.html:200
+msgid "Trailer"
+msgstr ""
+
+#: assets\templates\movies\movie.html:109
+msgid "TV Show Link"
+msgstr ""
+
+#: assets\templates\tv-shows\index.html:3
+#: index.html:34
+msgid "TV Shows"
+msgstr ""
+
+#: common\services\video-library-service.js:66
+msgid "Unable to parse %s as a float. [%s]"
+msgstr ""
+
+#: common\services\video-library-service.js:57
+msgid "Unable to parse %s as an integer. [%s]"
+msgstr ""
+
+#: assets\templates\movies\movie.html:158
+#: assets\templates\tv-shows\show.html:126
+msgid "View"
+msgstr ""
+
+#: assets\templates\movies\movie.html:169
+#: assets\templates\tv-shows\episode.html:102
+#: assets\templates\tv-shows\show.html:137
+msgid "Votes"
+msgstr ""
+
+#: assets\templates\about.html:3
+msgid "Web Interface Media Manager"
+msgstr ""
+
+#: assets\templates\movies\movie.html:121
+#: assets\templates\tv-shows\episode.html:66
+msgid "Writer"
+msgstr ""
+
+#: assets\templates\movies\movie.html:50
+msgid "Year"
+msgstr ""

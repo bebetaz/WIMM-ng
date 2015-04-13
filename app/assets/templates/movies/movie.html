@@ -1,0 +1,212 @@
+<header class="row">
+  <div class="small-12 columns">
+    <h1>{{movie.title}}</h1>
+  </div>
+</header>
+
+<!--
+
+Library.Id movieid
+    [ Optional.String title = null ]
+    [ Optional.Integer playcount = null ]
+    [ Optional.Integer runtime = null ]
+    [ mixed director = null ]
+    [ mixed studio = null ]
+    [ Optional.Integer year = null ]
+    [ Optional.String plot = null ]
+    [ mixed genre = null ]
+    [ Optional.Number rating = null ]
+    [ Optional.String mpaa = null ]
+    [ Optional.String imdbnumber = null ]
+    [ Optional.String votes = null ]
+    [ Optional.String lastplayed = null ]
+    [ Optional.String originaltitle = null ]
+    [ Optional.String trailer = null ]
+    [ Optional.String tagline = null ]
+    [ Optional.String plotoutline = null ]
+    [ mixed writer = null ]
+    [ mixed country = null ]
+    [ Optional.Integer top250 = null ]
+    [ Optional.String sorttitle = null ]
+    [ Optional.String set = null ]
+[ mixed showlink = null ]
+[ Optional.String thumbnail = null ]
+[ Optional.String fanart = null ]
+    [ mixed tag = null ]
+[ mixed art = null ]
+
+-->
+
+<main class="row">
+  <div class="small-12 columns">
+    <form name="myForm">
+      <div class="row"><!-- title|year -->
+        <div class="small-12 medium-9 columns"><!-- title -->
+          <label><span translate>Title</span>
+            <input type="text" name="title" required ng-model="movie.title">
+          </label>
+        </div><!-- /title -->
+        <div class="small-12 medium-3 columns"><!-- year -->
+          <label><span translate>Year</span>
+            <input type="number" name="year" min="0" placeholder="yyyy" ng-model="movie.year">
+          </label>
+        </div><!-- /year -->
+      </div><!-- /title|year -->
+      <div class="row"><!-- sorttitle -->
+        <div class="small-12 columns">
+          <label><span translate>Sort Title</span>
+            <input type="text" name="sorttitle" ng-model="movie.sorttitle">
+          </label>
+        </div>
+      </div><!-- /sorttitle -->
+      <div class="row"><!-- originaltitle -->
+        <div class="small-12 columns">
+          <label><span translate>Original Title</span>
+            <input type="text" name="originaltitle" ng-model="movie.originaltitle">
+          </label>
+        </div>
+      </div><!-- /originaltitle -->
+      <div class="row"><!-- tagline -->
+        <div class="small-12 columns">
+          <label><span translate>Tag Line</span>
+            <input type="text" name="tagline" ng-model="movie.tagline">
+          </label>
+        </div>
+      </div><!-- /tagline -->
+      <div class="row"><!-- plotoutline -->
+        <div class="small-12 columns">
+          <label><span translate>Plot Outline</span>
+            <textarea name="plotoutline" rows="3" ng-model="movie.plotoutline"></textarea>
+          </label>
+        </div>
+      </div><!-- /plotoutline -->
+      <div class="row"><!-- plot -->
+        <div class="small-12 columns">
+          <label><span translate>Plot</span>
+            <textarea name="plot" rows="5" ng-model="movie.plot"></textarea>
+          </label>
+        </div>
+      </div><!-- /plot -->
+      <div class="row"><!-- genre|tag -->
+        <div class="small-12 medium-6 columns"><!-- genre -->
+          <label><span translate>Genre</span>
+            <textarea name="genre" wimm-array-to-list placeholder="{{'one genre per line'|translate}}" ng-model="movie.genre"></textarea>
+          </label>
+        </div><!-- /genre -->
+        <div class="small-12 medium-6 columns"><!-- tag -->
+          <label><span translate>Tags</span>
+            <textarea name="tag" wimm-array-to-list placeholder="{{'one tag per line'|translate}}" ng-model="movie.tag"></textarea>
+          </label>
+        </div><!-- /tag -->
+      </div><!-- /genre|tag -->
+      <div class="row"><!-- set|showlink -->
+        <div class="small-12 medium-6 columns"><!-- set -->
+          <label><span translate>Set</span>
+            <input type="text" name="set" ng-model="movie.set">
+          </label>
+        </div><!-- /set -->
+        <div class="small-12 medium-6 columns"><!-- showlink -->
+          <label><span translate>TV Show Link</span>
+            <textarea name="showlink" wimm-array-to-list placeholder="{{'one show title per line'|translate}}" ng-model="movie.showlink"></textarea>
+          </label>
+        </div><!-- /showlink -->
+      </div><!-- /set|showlink -->
+      <div class="row"><!-- director|writer -->
+        <div class="small-12 medium-6 columns"><!-- director -->
+          <label><span translate>Director</span>
+            <textarea name="director" wimm-array-to-list placeholder="{{'one director per line'|translate}}" ng-model="movie.director"></textarea>
+          </label>
+        </div><!-- /director -->
+        <div class="small-12 medium-6 columns"><!-- writer -->
+          <label><span translate>Writer</span>
+            <textarea name="writer" wimm-array-to-list placeholder="{{'one writer per line'|translate}}" ng-model="movie.writer"></textarea>
+          </label>
+        </div><!-- /writer -->
+      </div><!-- /director|writer -->
+      <div class="row"><!-- country|studio -->
+        <div class="small-12 medium-6 columns"><!-- country -->
+          <label><span translate>Country</span>
+            <textarea name="country" wimm-array-to-list placeholder="{{'one country per line'|translate}}" ng-model="movie.country"></textarea>
+          </label>
+        </div><!-- /country -->
+        <div class="small-12 medium-6 columns"><!-- studio -->
+          <label><span translate>Studio</span>
+            <textarea name="studio" wimm-array-to-list placeholder="{{'one studio per line'|translate}}" ng-model="movie.studio"></textarea>
+          </label>
+        </div><!-- /studio -->
+      </div><!-- /country|studio -->
+      <div class="row"><!-- playcount|lastplayed -->
+        <div class="small-12 medium-3 columns"><!-- playcount -->
+          <label><span translate>Play Count</span>
+            <input type="number" name="playcount" min="0" wimm-string-to-number ng-model="movie.playcount">
+          </label>
+        </div><!-- /playcount -->
+        <div class="small-12 medium-9 columns"><!-- lastplayed -->
+          <label><span translate>Last Played</span>
+            <input type="text" name="lastplayed" placeholder="{{'Never'|translate}}" disabled ng-model="movie.lastplayed">
+          </label>
+        </div><!-- /lastplayed -->
+      </div><!-- /playcount|lastplayed -->
+      <div class="row"><!-- imdbnumber|rating|votes -->
+        <div class="small-12 medium-4 columns"><!-- imdbnumber -->
+          <label><span translate>IMDb Id</span>
+            <div class="row collapse">
+              <div class="small-10 columns">
+                <input type="text" name="imdbnumber" ng-model="movie.imdbnumber">
+              </div>
+              <div class="small-2 columns">
+                <span class="postfix" translate>View</span>
+              </div>
+            </div>
+          </label>
+        </div><!-- /imdbnumber -->
+        <div class="small-12 medium-4 columns"><!-- rating -->
+          <label><span translate>Rating</span>
+            <input type="number" name="rating" min="0" step="any" wimm-string-to-number ng-model="movie.rating">
+          </label>
+        </div><!-- /rating -->
+        <div class="small-12 medium-4 columns"><!-- votes -->
+          <label><span translate>Votes</span>
+            <input type="number" name="votes" min="0" wimm-string-to-number placeholder="{{'None'|translate}}" ng-model="movie.votes">
+          </label>
+        </div><!-- /votes -->
+      </div><!-- /imdbnumber|rating|votes -->
+      <div class="row"><!-- runtime|mpaa|votes -->
+        <div class="small-12 medium-4 columns"><!-- runtime -->
+          <label><span translate>Runtime</span>
+            <div class="row collapse">
+              <div class="small-9 columns">
+                <input type="number" name="runtime" min="0" wimm-string-to-number placeholder="{{'runtime in seconds'|translate}}" ng-model="movie.runtime">
+              </div>
+              <div class="small-3 columns">
+                <span class="postfix" translate>seconds</span>
+              </div>
+            </div>
+          </label>
+        </div><!-- /runtime -->
+        <div class="small-12 medium-4 columns"><!-- mpaa -->
+          <label><span translate>Content Rating</span>
+            <input type="text" name="mpaa" ng-model="movie.mpaa">
+          </label>
+        </div><!-- /mpaa -->
+        <div class="small-12 medium-4 columns"><!-- top250 -->
+          <label><span translate>IMDb Top 250</span>
+            <input type="number" name="top250" min="0" wimm-string-to-number placeholder="{{'None'|translate}}" ng-model="movie.top250">
+          </label>
+        </div><!-- /top250 -->
+      </div><!-- /runtime|mpaa|top250 -->
+      <div class="row"><!-- trailer -->
+        <div class="small-12 columns">
+          <label><span translate>Trailer</span>
+            <input type="text" name="trailer" ng-model="movie.trailer">
+          </label>
+        </div>
+      </div><!-- /trailer -->
+      <div class="row">
+        <div class="small-12 columns">
+          <button ng-click="saveChanges(movie.movieid, myForm)" ng-disabled="myForm.$pristine" ng-class="{success: myForm.$submitted}" class="button expand" role="button" translate>Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>

@@ -1,0 +1,18 @@
+<header class="row">
+  <div class="small-12 columns">
+    <h1 translate>TV Shows</h1>
+  </div>
+</header>
+
+<main class="row">
+  <div class="small-12 columns">
+    <ul class="small-block-grid-2 medium-block-grid-6 large-block-grid-7 xlarge-block-grid-8">
+      <li ng-repeat="show in data.tvshows">
+        <a class="th" role="button" aria-label="Thumbnail" ui-sref="tvShow({tvshowid: show.tvshowid})">
+          <img ng-src="{{show.thumbnail | wimmArtworkUrl}}" title="{{show.title}}">
+        </a>
+        <a ui-sref="tvShow({tvshowid: show.tvshowid})" class="small button expand" role="button">{{show.title}}</a>
+      </li>
+    </ul>
+  </div>
+</main>
