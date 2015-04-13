@@ -3,18 +3,13 @@
 
   angular
     .module('WIMM.tvShows')
-    .controller('ShowCtrl', showCtrl);
+    .controller('EpisodeCtrl', episodeCtrl);
 
-  function showCtrl($scope, VideoLibraryService, tvShow, seasons) {
+  function episodeCtrl($scope, VideoLibraryService, tvShow, episode) {
     $scope.tvShow = tvShow.tvshowdetails;
-    $scope.seasons = seasons;
+    $scope.episode = episode.episodedetails;
 
-    $scope.viewTvDbPage = function viewTvDbPage(id) {
-      window.open('http://thetvdb.com/index.php?tab=series&id=' + id,
-                  'WIMM.Ext');
-    };
-
-    $scope.saveChanges = function saveChanges(tvshowid, form) {
+    $scope.saveChanges = function saveChanges(episodeid, form) {
       var changes = {};
       angular.forEach(form, checkForChanges, changes);
 
@@ -25,7 +20,7 @@
         return;
       }
 
-      VideoLibraryService.setTVShowDetails(tvshowid, changes)
+      VideoLibraryService.setEpisodeDetails(episodeid, changes)
         .then(function(result) {
           if (result === 'OK') {
             form.$setSubmitted();

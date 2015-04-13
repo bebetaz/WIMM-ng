@@ -210,8 +210,28 @@
       }
 
       var promise = Service.ws.sendCommand('VideoLibrary.GetTVShows', params);
-      // Storing in a variable for clarity on what's being returned
-      return promise;
+      var defer = $q.defer();
+
+      promise.then(
+        function(result) {
+          if (result.tvshows) {
+            for (var i = 0; i < result.tvshows.length; i++) {
+              angular
+                .forEach(result.tvshows[i], postLoadCleanUp, result.tvshows[i]);
+            }
+          }
+          else {
+            result.tvshows = [];
+          }
+
+          defer.resolve(result);
+        },
+        function(error) {
+          defer.reject(error);
+        }
+      );
+
+      return defer.promise;
     };
 
     /**
@@ -233,8 +253,21 @@
         tvshowid: tvshowid,
         properties: tvShowDetailedProperties
       });
-      // Storing in a variable for clarity on what's being returned
-      return promise;
+      var defer = $q.defer();
+
+      promise.then(
+        function(result) {
+          angular
+            .forEach(result.tvshowdetails, postLoadCleanUp,
+                     result.tvshowdetails);
+          defer.resolve(result);
+        },
+        function(error) {
+          defer.reject(error);
+        }
+      );
+
+      return defer.promise;
     };
 
     /**
@@ -281,8 +314,29 @@
         season: season,
         properties: episodeBasicProperties
       });
-      // Storing in a variable for clarity on what's being returned
-      return promise;
+      var defer = $q.defer();
+
+      promise.then(
+        function(result) {
+          if (result.episodes) {
+            for (var i = 0; i < result.episodes.length; i++) {
+              angular
+                .forEach(result.episodes[i], postLoadCleanUp,
+                         result.episodes[i]);
+            }
+          }
+          else {
+            result.episodes = [];
+          }
+
+          defer.resolve(result);
+        },
+        function(error) {
+          defer.reject(error);
+        }
+      );
+
+      return defer.promise;
     };
 
     /**
@@ -305,8 +359,21 @@
         episodeid: episodeid,
         properties: episodeDetailedProperties
       });
-      // Storing in a variable for clarity on what's being returned
-      return promise;
+      var defer = $q.defer();
+
+      promise.then(
+        function(result) {
+          angular
+            .forEach(result.episodedetails, postLoadCleanUp,
+                     result.episodedetails);
+          defer.resolve(result);
+        },
+        function(error) {
+          defer.reject(error);
+        }
+      );
+
+      return defer.promise;
     };
 
     /**
@@ -316,11 +383,12 @@
      * @see [VideoLibrary.SetTVShowDetails]{@link
      *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.SetTVShowDetails}
      */
-    Service.setTVShowDetails = function(data) {
-      delete data.label;
+    Service.setTVShowDetails = function(tvshowid, updates) {
+      angular.forEach(updates, preSaveCleanUp, updates);
+      updates.tvshowid = tvshowid;
 
       var promise = Service.ws.sendCommand('VideoLibrary.SetTVShowDetails',
-                                           data);
+                                           updates);
       // Storing in a variable for clarity on what's being returned
       return promise;
     };
@@ -332,11 +400,12 @@
      * @see [VideoLibrary.SetEpisodeDetails]{@link
      *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.SetEpisodeDetails}
      */
-    Service.setEpisodeDetails = function(data) {
-      delete data.label;
+    Service.setEpisodeDetails = function(episodeid, updates) {
+      angular.forEach(updates, preSaveCleanUp, updates);
+      updates.episodeid = episodeid;
 
       var promise = Service.ws.sendCommand('VideoLibrary.SetEpisodeDetails',
-                                           data);
+                                           updates);
       // Storing in a variable for clarity on what's being returned
       return promise;
     };

@@ -29,7 +29,7 @@ Library.Id episodeid
 
 <main class="row">
   <div class="small-12 columns">
-    <form>
+    <form name="myForm">
       <div class="row"><!-- title|firstaired -->
         <div class="small-12 medium-9 columns"><!-- title -->
           <label><span translate>Title</span>
@@ -106,7 +106,7 @@ Library.Id episodeid
       </div><!-- /imdbnumber|rating|votes -->
       <div class="row">
         <div class="small-12 columns">
-          <a ng-click="saveChanges()" class="button expand" role="button" translate>Save</a>
+          <button ng-click="saveChanges(episode.episodeid, myForm)" ng-disabled="myForm.$pristine" ng-class="{success: myForm.$submitted}" class="button expand" role="button" translate>Save</button>
         </div>
       </div>
     </form>

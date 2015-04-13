@@ -34,7 +34,7 @@ Library.Id tvshowid
 <tabset>
   <tab heading="Details">
 
-      <form name="form">
+      <form name="myForm">
         <div class="row"><!-- title|year -->
           <div class="small-12 medium-9 columns"><!-- title -->
             <label><span translate>Title</span>
@@ -50,7 +50,7 @@ Library.Id tvshowid
         <div class="row"><!-- sorttitle|originaltitle -->
           <div class="small-12 medium-6 columns"><!-- sorttitle -->
             <label><span translate>Sort Title</span>
-              <input type="text" name="sorttitle" placeholder="{{'defaults to the shows title'|translate}}" ng-model="tvShow.sortitle">
+              <input type="text" name="sorttitle" placeholder="{{'defaults to the shows title'|translate}}" ng-model="tvShow.sorttitle">
             </label>
           </div><!-- /sorttitle -->
           <div class="small-12 medium-6 columns"><!-- originaltitle -->
@@ -141,7 +141,7 @@ Library.Id tvshowid
         </div><!-- /imdbnumber|rating|votes -->
         <div class="row">
           <div class="small-12 columns">
-            <a ng-click="saveChanges()" class="button expand" role="button" translate>Save</a>
+            <button ng-click="saveChanges(tvShow.tvshowid, myForm)" ng-disabled="myForm.$pristine" ng-class="{success: myForm.$submitted}" class="button expand" role="button" translate>Save</button>
           </div>
         </div>
       </form>
