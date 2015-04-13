@@ -5,7 +5,7 @@
     "bower_components/foundation/scss",
     "bower_components/open-iconic/font/css"
   ],
-  "sassOutput": "build/assets/css",
+  "sassOutput": "build/webinterface.wimm-ng/assets/css",
   "sassWatch": "app/assets/scss/**/*",
 
   "appJS": [
@@ -17,10 +17,10 @@
     "app/assets/js/**/*.js",
     "app/**/*.html"
   ],
-  "appJSOutput": "build/assets/js",
+  "appJSOutput": "build/webinterface.wimm-ng/assets/js",
   "appJSWatch": "app/assets/js/**/*",
 
-  "tplsOutput": "build/templates",
+  "tplsOutput": "build/webinterface.wimm-ng/templates",
   "tplsWatch": [
     "app/**/*.html",
     "!app/index.html"
@@ -43,7 +43,7 @@
 
     "bower_components/ngSocket/dist/ngSocket.js"
   ],
-  "vendorJSOutput": "build/assets/js",
+  "vendorJSOutput": "build/webinterface.wimm-ng/assets/js",
 
   "appAssets": [
     "app/**/*",

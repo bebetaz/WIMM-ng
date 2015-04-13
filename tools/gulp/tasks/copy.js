@@ -14,12 +14,12 @@
     // everything in the app folder except templates, Sass, and JS
     gulp.src(config.appAssets, {base: 'app/'})
         .pipe(displaySize({showFiles: true}))
-        .pipe(gulp.dest('build'));
+        .pipe(gulp.dest('build/webinterface.wimm-ng'));
 
     // Iconic font
     return gulp.src('bower_components/open-iconic/font/fonts/**/*')
         .pipe(displaySize({showFiles: true}))
-        .pipe(gulp.dest('build/assets/fonts'));
+        .pipe(gulp.dest('build/webinterface.wimm-ng/assets/fonts'));
   });
 
 }());

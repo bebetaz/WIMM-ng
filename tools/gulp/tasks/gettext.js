@@ -37,7 +37,7 @@
         }).on('error', plugins.util.log))
         .pipe(plugins.rename('app-translations.js'))
         .pipe(plugins.sourcemaps.write('.'))
-        .pipe(gulp.dest('build/assets/js'));
+        .pipe(gulp.dest('build/webinterface.wimm-ng/assets/js'));
   });
 
 }());
