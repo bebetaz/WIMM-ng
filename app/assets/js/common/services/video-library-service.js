@@ -77,6 +77,9 @@
           value === $filter('wimmRemoveArticle')(this.title)) {
         this[fieldName] = null;
       }
+      else if (fieldName === 'votes') {
+        this[fieldName] = value.toString();
+      }
       else if (fieldName === 'rating') {
         this[fieldName] = parseFloat(value.toFixed(1));
       }
