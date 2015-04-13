@@ -14,3 +14,45 @@
 @import "ui-view-animation";
 @import "loading-screen";
 @import "about";
+
+
+
+header {
+  // override foundation .row
+  margin-bottom: 1em !important;
+  max-width: 100% !important;
+}
+
+label {
+  font-weight: bold;
+}
+
+label input,
+label textarea {
+  font-weight: normal;
+}
+
+header {
+  background-color: $primary-color;
+}
+
+header h1 {
+  $bg-lightness: lightness($primary-color);
+  color: if($bg-lightness > 70%, $button-font-color-alt, $button-font-color);
+  font-weight: bold;
+}
+
+header h1 small {
+  color: silver;
+}
+
+header h1 a {
+  $bg-lightness: lightness($primary-color);
+  color: if($bg-lightness > 70%, $button-font-color-alt, $button-font-color);
+  font-weight: bold;
+}
+
+main .tab-title.active a {
+  background-color: $primary-color;
+  color: white;
+}

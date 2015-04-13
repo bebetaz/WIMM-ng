@@ -43,15 +43,14 @@ msgstr ""
 msgid "Music Videos"
 msgstr ""
 
-#: app.js:64
-#: app.js:66
+#: app.js:65
+#: app.js:67
 msgid "not connected"
 msgstr ""
 
 #: assets\templates\movies\index.html:2
 #: assets\templates\music-videos\index.html:2
 #: assets\templates\music\index.html:2
-#: assets\templates\tv-shows\index.html:2
 msgid "Not implemented yet."
 msgstr ""
 
@@ -67,7 +66,7 @@ msgstr ""
 msgid "Support Thread"
 msgstr ""
 
-#: assets\templates\tv-shows\index.html:1
+#: assets\templates\tv-shows\index.html:3
 #: index.html:34
 msgid "TV Shows"
 msgstr ""

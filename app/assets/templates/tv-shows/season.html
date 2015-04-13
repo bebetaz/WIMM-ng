@@ -1,0 +1,18 @@
+<header class="row">
+  <div class="small-12 columns">
+    <h1><a ui-sref="tvShow({tvshowid: tvShow.tvshowid})">{{tvShow.title}}</a> / Season {{season}}</h1>
+  </div>
+</header>
+
+<main class="row">
+  <div class="small-12 columns">
+    <ul class="small-block-grid-2 medium-block-grid-4 xlarge-block-grid-6">
+      <li ng-repeat="episode in episodes">
+        <a class="th" role="button" aria-label="Thumbnail" ui-sref="tvEpisode({tvshowid: tvShow.tvshowid, season: season, episodeid: episode.episodeid, episode: episode.episode})">
+          <img ng-src="{{episode.thumbnail | artworkUrl}}}}">
+        </a>
+        <a ui-sref="tvEpisode({tvshowid: tvShow.tvshowid, season: season, episodeid: episode.episodeid, episode: episode.episode})" class="small button expand" role="button"><small>{{episode.episode}}.</small> {{episode.title}}</a>
+      </li>
+    </ul>
+  </div>
+</main>

@@ -8,7 +8,11 @@
       'gettext',
 
       // angular-foundation
-      'mm.foundation'
+      'mm.foundation',
+
+      // WIMM
+      'WIMM.common',
+      'WIMM.tvShows'
     ])
     .config(config)
     .run(run)
@@ -25,10 +29,6 @@
       .state('movies', {
         url: '/movies',
         templateUrl: 'assets/templates/movies/index.html'
-      })
-      .state('tvShows', {
-        url: '/tv-shows',
-        templateUrl: 'assets/templates/tv-shows/index.html'
       })
       .state('musicVideos', {
         url: '/music-videos',
@@ -58,7 +58,8 @@
     //gettextCatalog.debug = true;
   }
 
-  function appCtrl(PKG, $rootScope, $scope, $log, gettext) {
+  function appCtrl(PKG, $rootScope, $scope, $log, gettext,
+                   KodiWebSocketService) {
     $scope.PKG = PKG;
     $scope.version = PKG.version;
     $scope.kodiVersion = gettext('not connected');
@@ -68,6 +69,7 @@
 
     $scope.init = function() {
       $log.log('Thunderbirds are go!');
+      KodiWebSocketService.connect();
     };
 
     $rootScope.$on('$stateChangeStart',
