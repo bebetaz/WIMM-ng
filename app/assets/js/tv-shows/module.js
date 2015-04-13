@@ -52,7 +52,7 @@
   }
 
   function getShow(VideoLibraryService, $stateParams) {
-    return VideoLibraryService.getTVShow($stateParams.tvshowid);
+    return VideoLibraryService.getTVShowDetails($stateParams.tvshowid);
   }
 
   function getSeasons(VideoLibraryService, $stateParams) {
@@ -65,8 +65,8 @@
   }
 
   function getEpisode(VideoLibraryService, $stateParams) {
-    return VideoLibraryService.getEpisode($stateParams.tvshowid,
-                                           $stateParams.episodeid);
+    return VideoLibraryService.getEpisodeDetails($stateParams.tvshowid,
+                                                 $stateParams.episodeid);
   }
 
 }(window.angular));

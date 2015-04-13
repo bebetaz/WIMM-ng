@@ -32,7 +32,7 @@
   }
 
   function getMovie(VideoLibraryService, $stateParams) {
-    return VideoLibraryService.getMovie($stateParams.movieid);
+    return VideoLibraryService.getMovieDetails($stateParams.movieid);
   }
 
 }(window.angular));

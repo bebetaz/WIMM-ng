@@ -139,7 +139,7 @@
      * @see [VideoLibrary.GetMovieDetails]{@link
      *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.GetMovieDetails}
      */
-    Service.getMovie = function(movieid) {
+    Service.getMovieDetails = function(movieid) {
       if (movieid < 0) {
         $log.error(
           'kodi.VideoLibraryService#getMovie: movieid must be >= 0.',
@@ -175,7 +175,7 @@
      * @see [VideoLibrary.SetMovieDetails]{@link
      *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.SetMovieDetails}
      */
-    Service.saveMovie = function(movieid, updates) {
+    Service.setMovieDetails = function(movieid, updates) {
       angular.forEach(updates, preSaveCleanUp, updates);
       updates.movieid = movieid;
 
@@ -241,7 +241,7 @@
      * @see [VideoLibrary.GetTVShowDetails]{@link
      *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.GetMovieDetails}
      */
-    Service.getTVShow = function(tvshowid) {
+    Service.getTVShowDetails = function(tvshowid) {
       if (tvshowid < 0) {
         $log.error(
           'kodi.VideoLibraryService#getTVShow: tvshowid must be >= 0.',
@@ -347,7 +347,7 @@
      * @see [VideoLibrary.GetEpisodeDetails]{@link
      *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.GetEpisodeDetails}
      */
-    Service.getEpisode = function(tvshowid, episodeid) {
+    Service.getEpisodeDetails = function(tvshowid, episodeid) {
       if (tvshowid < 0) {
         $log.error(
           'kodi.VideoLibraryService#getSeasons: tvshowid must be >= 0.',

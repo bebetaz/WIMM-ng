@@ -19,7 +19,7 @@
         return;
       }
 
-      VideoLibraryService.saveMovie(movieid, changes)
+      VideoLibraryService.setMovieDetails(movieid, changes)
         .then(function(result) {
           if (result === 'OK') {
             form.$setSubmitted();
