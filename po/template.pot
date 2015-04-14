@@ -78,12 +78,12 @@ msgstr ""
 msgid "Movies"
 msgstr ""
 
-#: assets\templates\music\index.html:1
+#: assets\templates\music\index.html:3
 #: index.html:36
 msgid "Music"
 msgstr ""
 
-#: assets\templates\music-videos\index.html:1
+#: assets\templates\music-videos\index.html:3
 #: index.html:35
 msgid "Music Videos"
 msgstr ""
@@ -106,8 +106,8 @@ msgstr ""
 msgid "not connected"
 msgstr ""
 
-#: assets\templates\music-videos\index.html:2
-#: assets\templates\music\index.html:2
+#: assets\templates\music-videos\index.html:9
+#: assets\templates\music\index.html:9
 msgid "Not implemented yet."
 msgstr ""
 
