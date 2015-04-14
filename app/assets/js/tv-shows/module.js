@@ -9,7 +9,7 @@
   function config($stateProvider) {
     $stateProvider
       .state('tvShows', {
-        url: '/tv-shows',
+        url: '/tv-shows?page',
         templateUrl: 'assets/templates/tv-shows/index.html',
         controller: 'ListShowsCtrl',
         resolve: {
@@ -46,7 +46,12 @@
       });
   }
 
-  function getShows(VideoLibraryService) {
+  function getShows(CONFIG, VideoLibraryService, $stateParams) {
+    var limits = {
+      start: CONFIG.PAGE_SIZE * (($stateParams.page || 1) - 1)
+    };
+    limits.end = limits.start + CONFIG.PAGE_SIZE;
+
     return VideoLibraryService.getTVShows();
   }
 
