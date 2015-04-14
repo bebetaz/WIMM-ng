@@ -17,6 +17,9 @@
     ])
     .config(config)
     .run(run)
+    .constant('CONFIG', {
+      'PAGE_SIZE': 24
+    })
     .controller('AppCtrl', appCtrl);
 
   function config($urlRouterProvider, $stateProvider, $locationProvider) {
