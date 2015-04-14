@@ -16,14 +16,14 @@ git add package.json CHANGELOG.md
 git commit -m 'chore(release): release <version>'
 
 git checkout master
-git merge release/<version>
+git merge --no-ff release/<version>
 git push
 
-git tag -a <version> master
+git tag <version> master
 git push --tag
 
 git checkout develop
-git merge release/<version>
+git merge --no-ff release/<version>
 git push
 
 git branch -d release/<version>
