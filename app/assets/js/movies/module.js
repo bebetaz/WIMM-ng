@@ -9,7 +9,7 @@
   function config($stateProvider) {
     $stateProvider
       .state('movies', {
-        url: '/movies',
+        url: '/movies?page',
         templateUrl: 'assets/templates/movies/index.html',
         controller: 'ListMoviesCtrl',
         resolve: {
@@ -26,8 +26,13 @@
       });
   }
 
-  function getMovies(VideoLibraryService) {
-    return VideoLibraryService.getMovies();
+  function getMovies(CONFIG, VideoLibraryService, $stateParams) {
+    var limits = {
+      start: CONFIG.PAGE_SIZE * (($stateParams.page || 1) - 1)
+    };
+    limits.end = limits.start + CONFIG.PAGE_SIZE;
+
+    return VideoLibraryService.getMovies(undefined, limits);
   }
 
   function getMovie(VideoLibraryService, $stateParams) {
