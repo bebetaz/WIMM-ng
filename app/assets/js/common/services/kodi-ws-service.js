@@ -163,7 +163,7 @@
      * ---------------------------------------------------------------------- */
 
     KodiWebSocket.connect = function(url) {
-      url = url || 'ws://' + window.location.host + ':9090/jsonrpc';
+      url = url || 'ws://' + window.location.hostname + ':9090/jsonrpc';
       $log.log('KodiWSFactory: connecting to ', url);
       ws = ngSocket(url);
       ws.onMessage(onMessage, {fromJson: true});
