@@ -52,7 +52,7 @@
     };
     limits.end = limits.start + CONFIG.PAGE_SIZE;
 
-    return VideoLibraryService.getTVShows();
+    return VideoLibraryService.getTVShows(undefined, limits);
   }
 
   function getShow(VideoLibraryService, $stateParams) {
