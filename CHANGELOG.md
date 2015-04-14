@@ -1,3 +1,11 @@
+### 5.0.0-alpha.3 (2015-04-14)
+
+
+#### Bug Fixes
+
+* **tv-shows:** pass limits to VideoLibraryService.getTVShows for pagination ([5fc46c21](https://github.com/fyfe/WIMM-ng/commit/5fc46c2123cff62d35606e111c8acda62c55ae1a))
+
+
 ### 5.0.0-alpha.2 (2015-04-14)
 
 
