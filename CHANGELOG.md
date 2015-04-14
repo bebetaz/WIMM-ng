@@ -1,3 +1,17 @@
+### 5.0.0-alpha.2 (2015-04-14)
+
+
+#### Bug Fixes
+
+* **common:** we only want the hostname/ip not the port number when creating the web socket ad ([05feb627](https://github.com/fyfe/WIMM-ng/commit/05feb627a01d1670613a8623a86a3d199caa505c))
+
+
+#### Features
+
+* **movies:** add pagination to movies list ([74887979](https://github.com/fyfe/WIMM-ng/commit/748879796bf8ee84b8f95688803804a46b23f98d))
+* **tv-shows:** add pagination to TV show list ([0cfa1e29](https://github.com/fyfe/WIMM-ng/commit/0cfa1e29b2e0191b6dec9face28d47085e1cd189))
+
+
 ### 5.0.0-alpha.1 (2015-04-13)
 
 
