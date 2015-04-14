@@ -1,3 +1,11 @@
+## 5.0.0 (2015-04-14)
+
+
+#### Bug Fixes
+
+* **app:** make the under construction pages look the same as the other pages ([87fbcaf0](https://github.com/fyfe/WIMM-ng/commit/87fbcaf0eec30e0794bfceee10d0b2920cfc0f17))
+
+
 ### 5.0.0-alpha.3 (2015-04-14)
 
 
