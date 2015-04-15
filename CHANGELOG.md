@@ -1,3 +1,13 @@
+### 5.0.1 (2015-04-15)
+
+
+#### Bug Fixes
+
+* **app:**
+  * increase genre and tag field sizes ([c1475d58](https://github.com/fyfe/WIMM-ng/commit/c1475d5859b6ca3fc1831719d9d40f9875b640e2))
+  * increase maximum width for large screens ([18d3e6f8](https://github.com/fyfe/WIMM-ng/commit/18d3e6f83a1cd8a5d30310641da9307004251e1d))
+
+
 ## 5.0.0 (2015-04-14)
 
 
