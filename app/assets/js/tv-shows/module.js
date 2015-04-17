@@ -9,8 +9,45 @@
   function config($stateProvider) {
     $stateProvider
       .state('tvShows', {
-        url: '/tv-shows?page',
-        templateUrl: 'assets/templates/tv-shows/index.html',
+        abstract: true,
+        url: '/tv-shows',
+        templateUrl: 'assets/templates/tv-shows/index.html'
+      })
+      .state('tvShows.title', {
+        url: '/by-title?page',
+        templateUrl: 'assets/templates/tv-shows/show-list.html',
+        controller: 'ListShowsCtrl',
+        resolve: {
+          tvShows: getShows
+        }
+      })
+      .state('tvShows.genres', {
+        url: '/by-genre',
+        templateUrl: 'assets/templates/tv-shows/group-list.html',
+        controller: 'ListGroupCtrl',
+        resolve: {
+          groups: getGenres
+        }
+      })
+      .state('tvShows.genre', {
+        url: '/genre/{genre}?page',
+        templateUrl: 'assets/templates/tv-shows/show-list.html',
+        controller: 'ListShowsCtrl',
+        resolve: {
+          tvShows: getShows
+        }
+      })
+      .state('tvShows.tags', {
+        url: '/by-tag',
+        templateUrl: 'assets/templates/tv-shows/group-list.html',
+        controller: 'ListGroupCtrl',
+        resolve: {
+          groups: getTags
+        }
+      })
+      .state('tvShows.tag', {
+        url: '/tag/{tag}?page',
+        templateUrl: 'assets/templates/tv-shows/show-list.html',
         controller: 'ListShowsCtrl',
         resolve: {
           tvShows: getShows
@@ -52,7 +89,33 @@
     };
     limits.end = limits.start + CONFIG.PAGE_SIZE;
 
-    return VideoLibraryService.getTVShows(undefined, limits);
+    var filter;
+    if ($stateParams) {
+      if ($stateParams.genre) {
+        filter = {
+          field: 'genre',
+          operator: 'contains',
+          value: $stateParams.genre
+        };
+      }
+      else if ($stateParams.tag) {
+        filter = {
+          field: 'tag',
+          operator: 'contains',
+          value: $stateParams.tag
+        };
+      }
+    }
+
+    return VideoLibraryService.getTVShows(filter, limits);
+  }
+
+  function getGenres(VideoLibraryService) {
+    return VideoLibraryService.getGenres('tvshow');
+  }
+
+  function getTags(VideoLibraryService) {
+    return VideoLibraryService.getTVShowTags();
   }
 
   function getShow(VideoLibraryService, $stateParams) {

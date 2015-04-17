@@ -22,7 +22,7 @@
       'art'
     ];
 
-    var tvShowBasicProperties = ['title', 'thumbnail'];
+    var tvShowBasicProperties = ['title', 'thumbnail', 'tag'];
     // Other Fields:
     //   year, cast, episode, fanart, thumbnail, file, watchedepisodes,
     //   dateadded, art
@@ -526,6 +526,45 @@
       var promise = Service.ws.sendCommand('VideoLibrary.SetEpisodeDetails',
                                            updates);
       // Storing in a variable for clarity on what's being returned
+      return promise;
+    };
+
+    /**
+     * Retrieve all tv show tags
+     * @public
+     */
+    Service.getTVShowTags = function() {
+      var promise =  Service
+        .getTVShows({field: 'tag', operator: 'greaterthan', value: '0'})
+        .then(angular.bind(this,
+          function getTagsResult(result) {
+            var tags = [];
+            var groups = [];
+            var show;
+
+            for (var i = 0, iLen = result.tvshows.length; i < iLen; i++) {
+              show = result.tvshows[i];
+
+              if (angular.isArray(show.tag)) {
+                for (var j = 0, jLen = show.tag.length; j < jLen; j++) {
+                  if (!lodash.contains(tags, show.tag[j])) {
+                    tags.push(show.tag[j]);
+                    groups.push({title: show.tag[j]});
+                  }
+                }
+              }
+            }
+
+            return {
+              tags: groups,
+              limits: {
+                start: 0,
+                end: groups.length,
+                total: groups.length
+              }
+            };
+          }));
+
       return promise;
     };
 
