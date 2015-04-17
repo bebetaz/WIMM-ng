@@ -262,6 +262,48 @@
       return promise;
     };
 
+    /**
+     * Retrieve recently added movies
+     * @public
+     * @see [VideoLibrary.GetRecentlyAddedMovies]{@link
+     *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.GetRecentlyAddedMovies}
+     */
+    Service.getRecentlyAddedMovies = function(limits) {
+      var params = {
+        properties: movieBasicProperties,
+        sort: {order: 'descending', ignorearticle: true, method: 'dateadded'}
+      };
+
+      if (!angular.isUndefined(limits)) {
+        params.limits = limits;
+      }
+
+      var promise = Service.ws
+        .sendCommand('VideoLibrary.GetRecentlyAddedMovies', params);
+      var defer = $q.defer();
+
+      promise.then(
+        function(result) {
+          if (result.movies) {
+            for (var i = 0; i < result.movies.length; i++) {
+              angular
+                .forEach(result.movies[i], postLoadCleanUp, result.movies[i]);
+            }
+          }
+          else {
+            result.movies = [];
+          }
+
+          defer.resolve(result);
+        },
+        function(error) {
+          defer.reject(error);
+        }
+      );
+
+      return defer.promise;
+    };
+
     /* ---------------------------------------------------------------------- *
      *   TV Show Methods                                                        *
      * ---------------------------------------------------------------------- */

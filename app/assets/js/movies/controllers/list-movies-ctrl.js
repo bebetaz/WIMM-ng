@@ -18,6 +18,9 @@
     else if ($stateParams.tag) {
       $scope.$parent.sectionTitle = $stateParams.tag;
     }
+    else if($state.current.data && $state.current.data.sectionTitle) {
+      $scope.$parent.sectionTitle = $state.current.data.sectionTitle;
+    }
 
     $scope.itemsPerPage = CONFIG.PAGE_SIZE;
     $scope.totalItems = movies.limits.total;

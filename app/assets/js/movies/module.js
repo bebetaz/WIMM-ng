@@ -6,7 +6,7 @@
     ])
     .config(config);
 
-  function config($stateProvider) {
+  function config(gettext, $stateProvider) {
     $stateProvider
       .state('movies', {
         abstract: true,
@@ -19,6 +19,17 @@
         controller: 'ListMoviesCtrl',
         resolve: {
           movies: getMovies
+        }
+      })
+      .state('movies.recent', {
+        url: '/recently-added?page',
+        templateUrl: 'assets/templates/movies/movie-list.html',
+        controller: 'ListMoviesCtrl',
+        resolve: {
+          movies: getRecentlyAdded
+        },
+        data: {
+          sectionTitle: gettext('Recently Added')
         }
       })
       .state('movies.genres', {
@@ -111,6 +122,15 @@
     }
 
     return VideoLibraryService.getMovies(filter, limits);
+  }
+
+  function getRecentlyAdded(CONFIG, VideoLibraryService, $stateParams) {
+    var limits = {
+      start: CONFIG.PAGE_SIZE * (($stateParams.page || 1) - 1)
+    };
+    limits.end = limits.start + CONFIG.PAGE_SIZE;
+
+    return VideoLibraryService.getRecentlyAddedMovies(limits);
   }
 
   function getGenres(VideoLibraryService) {
