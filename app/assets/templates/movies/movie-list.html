@@ -1,0 +1,18 @@
+<nav class="row">
+  <div class="small-12 columns">
+    <pagination total-items="totalItems" page="currentPage" items-per-page="itemsPerPage" on-select-page="changePage(page)" max-size="numPages" boundary-links="true" rotate="false"></pagination>
+  </div>
+</nav>
+
+<div class="row">
+  <div class="small-12 columns">
+    <ul class="small-block-grid-2 medium-block-grid-6 large-block-grid-7 xlarge-block-grid-8">
+      <li ng-repeat="movie in data.movies">
+        <a class="th" role="button" aria-label="Thumbnail" ui-sref="movie({movieid: movie.movieid})">
+          <img ng-src="{{movie.thumbnail | wimmArtworkUrl}}" title="{{movie.title}}">
+        </a>
+        <a ui-sref="movie({movieid: movie.movieid})" class="small button expand" role="button">{{movie.title}}</a>
+      </li>
+    </ul>
+  </div>
+</div>

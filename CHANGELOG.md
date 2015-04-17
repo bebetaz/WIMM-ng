@@ -1,3 +1,14 @@
+### 5.0.2 (2015-04-17)
+
+
+#### Features
+
+* **movies:**
+  * add recently added view ([272f5dc7](https://github.com/fyfe/WIMM-ng/commit/272f5dc772c310f2727be714b79729d021d30993))
+  * refactor movies view and add view by genre, tag and set ([0f86d21f](https://github.com/fyfe/WIMM-ng/commit/0f86d21fd47cc0cd1dae376192543f2baed299be))
+* **tv-shows:** refactor tv shows view and add view by genre, tag and set ([609f30cf](https://github.com/fyfe/WIMM-ng/commit/609f30cf8eb5d4b4bfe36da7b80368d0db6e8735))
+
+
 ### 5.0.1 (2015-04-15)
 
 

@@ -5,8 +5,16 @@
     .module('WIMM.tvShows')
     .controller('ListShowsCtrl', listShowsCtrl);
 
-  function listShowsCtrl(CONFIG, $scope, $state, tvShows) {
+  function listShowsCtrl(CONFIG, $scope, $state, $stateParams, tvShows) {
     $scope.data = tvShows;
+
+    $scope.$parent.sectionTitle = '';
+    if ($stateParams.genre) {
+      $scope.$parent.sectionTitle = $stateParams.genre;
+    }
+    else if ($stateParams.tag) {
+      $scope.$parent.sectionTitle = $stateParams.tag;
+    }
 
     $scope.itemsPerPage = CONFIG.PAGE_SIZE;
     $scope.totalItems = tvShows.limits.total;
