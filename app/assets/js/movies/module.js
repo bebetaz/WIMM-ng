@@ -9,8 +9,61 @@
   function config($stateProvider) {
     $stateProvider
       .state('movies', {
-        url: '/movies?page',
-        templateUrl: 'assets/templates/movies/index.html',
+        abstract: true,
+        url: '/movies',
+        templateUrl: 'assets/templates/movies/index.html'
+      })
+      .state('movies.title', {
+        url: '/by-title?page',
+        templateUrl: 'assets/templates/movies/movie-list.html',
+        controller: 'ListMoviesCtrl',
+        resolve: {
+          movies: getMovies
+        }
+      })
+      .state('movies.genres', {
+        url: '/by-genre',
+        templateUrl: 'assets/templates/movies/group-list.html',
+        controller: 'ListGroupCtrl',
+        resolve: {
+          groups: getGenres
+        }
+      })
+      .state('movies.genre', {
+        url: '/genre/{genre}?page',
+        templateUrl: 'assets/templates/movies/movie-list.html',
+        controller: 'ListMoviesCtrl',
+        resolve: {
+          movies: getMovies
+        }
+      })
+      .state('movies.tags', {
+        url: '/by-tag',
+        templateUrl: 'assets/templates/movies/group-list.html',
+        controller: 'ListGroupCtrl',
+        resolve: {
+          groups: getTags
+        }
+      })
+      .state('movies.tag', {
+        url: '/tag/{tag}?page',
+        templateUrl: 'assets/templates/movies/movie-list.html',
+        controller: 'ListMoviesCtrl',
+        resolve: {
+          movies: getMovies
+        }
+      })
+      .state('movies.sets', {
+        url: '/by-set',
+        templateUrl: 'assets/templates/movies/group-list.html',
+        controller: 'ListGroupCtrl',
+        resolve: {
+          groups: getSets
+        }
+      })
+      .state('movies.set', {
+        url: '/set/{set}?page',
+        templateUrl: 'assets/templates/movies/movie-list.html',
         controller: 'ListMoviesCtrl',
         resolve: {
           movies: getMovies
@@ -32,7 +85,44 @@
     };
     limits.end = limits.start + CONFIG.PAGE_SIZE;
 
-    return VideoLibraryService.getMovies(undefined, limits);
+    var filter;
+    if ($stateParams) {
+      if ($stateParams.set) {
+        filter = {
+          field: 'set',
+          operator: 'is',
+          value: $stateParams.set
+        };
+      }
+      else if ($stateParams.genre) {
+        filter = {
+          field: 'genre',
+          operator: 'contains',
+          value: $stateParams.genre
+        };
+      }
+      else if ($stateParams.tag) {
+        filter = {
+          field: 'tag',
+          operator: 'contains',
+          value: $stateParams.tag
+        };
+      }
+    }
+
+    return VideoLibraryService.getMovies(filter, limits);
+  }
+
+  function getGenres(VideoLibraryService) {
+    return VideoLibraryService.getGenres('movie');
+  }
+
+  function getTags(VideoLibraryService) {
+    return VideoLibraryService.getMovieTags();
+  }
+
+  function getSets(VideoLibraryService) {
+    return VideoLibraryService.getMovieSets();
   }
 
   function getMovie(VideoLibraryService, $stateParams) {

@@ -6,13 +6,13 @@
     .factory('VideoLibraryService', VideoLibraryService);
 
   function VideoLibraryService($q, $rootScope, $log, $filter, gettext,
-    KodiWebSocketService) {
+    KodiWebSocketService, lodash) {
     // We return this object to anything injecting our service
     var Service = {
       ws: KodiWebSocketService
     };
 
-    var movieBasicProperties = ['title', 'year', 'thumbnail'];
+    var movieBasicProperties = ['title', 'year', 'thumbnail', 'tag'];
     var movieDetailedProperties = [
       'title', 'genre', 'year', 'rating', 'director', 'trailer', 'tagline',
       'plot', 'plotoutline', 'originaltitle', 'lastplayed', 'playcount',
@@ -84,6 +84,81 @@
         this[fieldName] = parseFloat(value.toFixed(1));
       }
     }
+
+    /**
+     * Retrieve all genres
+     * @param {string} type - type of media to retrieve genres for movie, tvshow
+     *                        or musicvideo
+     * @public
+     * @see [VideoLibrary.GetGenres]{@link
+     *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.GetGenres}
+     */
+    Service.getGenres = function(type) {
+      console.assert(type !== undefined,
+        'type shoud be either movie, tvshow or musicvideo');
+
+      var promise = Service.ws.sendCommand('VideoLibrary.GetGenres', {
+        type: type,
+        properties: ['title'],
+        sort: {order: 'ascending', ignorearticle: true, method: 'title'}
+      });
+
+      return promise;
+    };
+
+    /**
+     * Retrieve all movie sets
+     * @public
+     * @see [VideoLibrary.GetMovieSets]{@link
+     *      http://kodi.wiki/view/JSON-RPC_API/v6#VideoLibrary.GetMovieSets}
+     */
+    Service.getMovieSets = function() {
+      var promise = Service.ws.sendCommand('VideoLibrary.GetMovieSets', {
+        properties: ['title'],
+        sort: {order: 'ascending', ignorearticle: true, method: 'title'}
+      });
+
+      return promise;
+    };
+
+    /**
+     * Retrieve all movie tags
+     * @public
+     */
+    Service.getMovieTags = function() {
+      var promise =  Service
+        .getMovies({field: 'tag', operator: 'greaterthan', value: '0'})
+        .then(angular.bind(this,
+          function getTagsResult(result) {
+            var tags = [];
+            var groups = [];
+            var movie;
+
+            for (var i = 0, iLen = result.movies.length; i < iLen; i++) {
+              movie = result.movies[i];
+
+              if (angular.isArray(movie.tag)) {
+                for (var j = 0, jLen = movie.tag.length; j < jLen; j++) {
+                  if (!lodash.contains(tags, movie.tag[j])) {
+                    tags.push(movie.tag[j]);
+                    groups.push({title: movie.tag[j]});
+                  }
+                }
+              }
+            }
+
+            return {
+              tags: groups,
+              limits: {
+                start: 0,
+                end: groups.length,
+                total: groups.length
+              }
+            };
+          }));
+
+      return promise;
+    };
 
     /* ---------------------------------------------------------------------- *
      *   Movie Methods                                                        *

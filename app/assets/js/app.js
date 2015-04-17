@@ -23,7 +23,7 @@
     .controller('AppCtrl', appCtrl);
 
   function config($urlRouterProvider, $stateProvider, $locationProvider) {
-    $urlRouterProvider.otherwise('/movies');
+    $urlRouterProvider.otherwise('/movies/by-title');
 
     $stateProvider
       .state('about', {
