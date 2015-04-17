@@ -5,8 +5,22 @@
     .module('WIMM.movies')
     .controller('ListMoviesCtrl', listMoviesCtrl);
 
-  function listMoviesCtrl(CONFIG, $scope, $state, movies) {
+  function listMoviesCtrl(CONFIG, $scope, $state, $stateParams, movies) {
     $scope.data = movies;
+
+    $scope.$parent.sectionTitle = '';
+    if ($stateParams.set) {
+      $scope.$parent.sectionTitle = $stateParams.set;
+    }
+    else if ($stateParams.genre) {
+      $scope.$parent.sectionTitle = $stateParams.genre;
+    }
+    else if ($stateParams.tag) {
+      $scope.$parent.sectionTitle = $stateParams.tag;
+    }
+    else if($state.current.data && $state.current.data.sectionTitle) {
+      $scope.$parent.sectionTitle = $state.current.data.sectionTitle;
+    }
 
     $scope.itemsPerPage = CONFIG.PAGE_SIZE;
     $scope.totalItems = movies.limits.total;
