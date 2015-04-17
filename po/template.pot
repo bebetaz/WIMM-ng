@@ -8,6 +8,25 @@ msgstr ""
 msgid "A web interface for managing the Kodi media library."
 msgstr ""
 
+#: index.html:39
+#: index.html:47
+msgid "by Genre"
+msgstr ""
+
+#: index.html:38
+msgid "by Set"
+msgstr ""
+
+#: index.html:40
+#: index.html:48
+msgid "by Tag"
+msgstr ""
+
+#: index.html:37
+#: index.html:46
+msgid "by Title"
+msgstr ""
+
 #: assets\templates\movies\movie.html:188
 #: assets\templates\tv-shows\show.html:96
 msgid "Content Rating"
@@ -43,6 +62,11 @@ msgstr ""
 msgid "Genre"
 msgstr ""
 
+#: movies\controllers\list-group-ctrl.js:10
+#: tv-shows\controllers\list-group-ctrl.js:10
+msgid "Genres"
+msgstr ""
+
 #: assets\templates\about.html:22
 msgid "Home Page"
 msgstr ""
@@ -74,17 +98,17 @@ msgid "Menu"
 msgstr ""
 
 #: assets\templates\movies\index.html:3
-#: index.html:33
+#: index.html:34
 msgid "Movies"
 msgstr ""
 
 #: assets\templates\music\index.html:3
-#: index.html:36
+#: index.html:52
 msgid "Music"
 msgstr ""
 
 #: assets\templates\music-videos\index.html:3
-#: index.html:35
+#: index.html:51
 msgid "Music Videos"
 msgstr ""
 
@@ -184,6 +208,11 @@ msgstr ""
 msgid "Rating"
 msgstr ""
 
+#: index.html:36
+#: movies\module.js:32
+msgid "Recently Added"
+msgstr ""
+
 #: assets\templates\movies\movie.html:176
 #: assets\templates\tv-shows\episode.html:85
 msgid "Runtime"
@@ -215,6 +244,10 @@ msgstr ""
 msgid "Set"
 msgstr ""
 
+#: movies\controllers\list-group-ctrl.js:17
+msgid "Sets"
+msgstr ""
+
 #: assets\templates\movies\movie.html:57
 #: assets\templates\tv-shows\show.html:52
 msgid "Sort Title"
@@ -235,6 +268,8 @@ msgstr ""
 
 #: assets\templates\movies\movie.html:97
 #: assets\templates\tv-shows\show.html:76
+#: movies\controllers\list-group-ctrl.js:24
+#: tv-shows\controllers\list-group-ctrl.js:17
 msgid "Tags"
 msgstr ""
 
@@ -257,7 +292,7 @@ msgid "TV Show Link"
 msgstr ""
 
 #: assets\templates\tv-shows\index.html:3
-#: index.html:34
+#: index.html:44
 msgid "TV Shows"
 msgstr ""
 
