@@ -1,3 +1,11 @@
+### 5.0.3 (2015-04-17)
+
+
+#### Bug Fixes
+
+* **app:** controller names need to be unique over modules ([638e466e](https://github.com/fyfe/WIMM-ng/commit/638e466ee75e2ce484fde8742093bcf975a703d1))
+
+
 ### 5.0.2 (2015-04-17)
 
 
