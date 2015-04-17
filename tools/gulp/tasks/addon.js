@@ -30,9 +30,10 @@
         plugins.util.noop;
 
     gulp.src('CHANGELOG.md')
-        .pipe(displaySize({showFiles: true}))
-        .pipe(plugins.rename('changelog.txt'))
-        .pipe(gulp.dest('build/webinterface.wimm-ng'));
+      .pipe(plugins.replace(/\*\*([^:]*:)\*\*/g, '$1'))
+      .pipe(plugins.replace(/(.*) \(\[[a-f0-9]*\]\(https:[^)]*\)\)/g, '$1'))
+      .pipe(plugins.rename('changelog.txt'))
+      .pipe(gulp.dest('build/webinterface.wimm-ng'));
 
     return gulp.src(['addon/fanart.jpg', 'addon/icon.png'])
         .pipe(displaySize({showFiles: true}))
