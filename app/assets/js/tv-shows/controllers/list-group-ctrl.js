@@ -3,7 +3,7 @@
 
   angular
     .module('WIMM.tvShows')
-    .controller('ListGroupCtrl', listGroupCtrl);
+    .controller('ListShowGroupCtrl', listGroupCtrl);
 
   function listGroupCtrl(CONFIG, $scope, gettext, groups) {
     if (groups.genres) {

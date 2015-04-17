@@ -35,7 +35,7 @@
       .state('movies.genres', {
         url: '/by-genre',
         templateUrl: 'assets/templates/movies/group-list.html',
-        controller: 'ListGroupCtrl',
+        controller: 'ListMovieGroupCtrl',
         resolve: {
           groups: getGenres
         }
@@ -51,7 +51,7 @@
       .state('movies.tags', {
         url: '/by-tag',
         templateUrl: 'assets/templates/movies/group-list.html',
-        controller: 'ListGroupCtrl',
+        controller: 'ListMovieGroupCtrl',
         resolve: {
           groups: getTags
         }
@@ -67,7 +67,7 @@
       .state('movies.sets', {
         url: '/by-set',
         templateUrl: 'assets/templates/movies/group-list.html',
-        controller: 'ListGroupCtrl',
+        controller: 'ListMovieGroupCtrl',
         resolve: {
           groups: getSets
         }

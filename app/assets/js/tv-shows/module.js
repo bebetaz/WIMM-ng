@@ -24,7 +24,7 @@
       .state('tvShows.genres', {
         url: '/by-genre',
         templateUrl: 'assets/templates/tv-shows/group-list.html',
-        controller: 'ListGroupCtrl',
+        controller: 'ListShowGroupCtrl',
         resolve: {
           groups: getGenres
         }
@@ -40,7 +40,7 @@
       .state('tvShows.tags', {
         url: '/by-tag',
         templateUrl: 'assets/templates/tv-shows/group-list.html',
-        controller: 'ListGroupCtrl',
+        controller: 'ListShowGroupCtrl',
         resolve: {
           groups: getTags
         }

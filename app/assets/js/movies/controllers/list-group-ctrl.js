@@ -3,7 +3,7 @@
 
   angular
     .module('WIMM.movies')
-    .controller('ListGroupCtrl', listGroupCtrl);
+    .controller('ListMovieGroupCtrl', listGroupCtrl);
 
   function listGroupCtrl(CONFIG, $scope, gettext, groups) {
     if (groups.genres) {
