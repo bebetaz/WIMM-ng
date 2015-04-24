@@ -155,7 +155,7 @@ Library.Id movieid
                 <input type="text" name="imdbnumber" ng-model="movie.imdbnumber">
               </div>
               <div class="small-2 columns">
-                <span class="postfix" translate>View</span>
+                <a ng-click="viewIMDbPage(movie.imdbnumber)" class="button postfix" translate>View</a>
               </div>
             </div>
           </label>

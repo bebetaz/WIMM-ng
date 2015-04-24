@@ -8,6 +8,11 @@
   function movieCtrl($scope, VideoLibraryService, movie) {
     $scope.movie = movie.moviedetails;
 
+    $scope.viewIMDbPage = function viewIMDbPage(id) {
+      window.open('http://www.imdb.com/title/' + id + '/',
+                  'WIMM.Ext');
+    };
+
     $scope.saveChanges = function saveChanges(movieid, form) {
       var changes = {};
       angular.forEach(form, checkForChanges, changes);
