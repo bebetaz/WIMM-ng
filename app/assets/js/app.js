@@ -13,7 +13,8 @@
       // WIMM
       'WIMM.common',
       'WIMM.movies',
-      'WIMM.tvShows'
+      'WIMM.tvShows',
+      'WIMM.music'
     ])
     .config(config)
     .run(run)
@@ -33,10 +34,6 @@
       .state('musicVideos', {
         url: '/music-videos',
         templateUrl: 'assets/templates/music-videos/index.html'
-      })
-      .state('music', {
-        url: '/music',
-        templateUrl: 'assets/templates/music/index.html'
       });
 
     // NOTE: Don't enable $locationProvider.html5Mode. This requires a

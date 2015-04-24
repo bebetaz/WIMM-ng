@@ -1,0 +1,133 @@
+<header class="row">
+  <div class="small-12 columns">
+    <h1>{{album.title}}</h1>
+  </div>
+</header>
+
+<!--
+
+Library.Id albumid
+    [ Optional.String title = null ]
+    [ mixed artist = null ]
+    [ Optional.String description = null ]
+    [ mixed genre = null ]
+    [ mixed theme = null ]
+    [ mixed mood = null ]
+    [ mixed style = null ]
+    [ Optional.String type = null ]
+    [ Optional.String albumlabel = null ]
+    [ Optional.Integer rating = null ]
+    [ Optional.Integer year = null ]
+
+-->
+
+<div class="row">
+  <div class="small-12 columns">
+
+<tabset>
+  <tab heading="Details">
+
+    <form name="myForm">
+      <div class="row"><!-- title|year -->
+        <div class="small-12 medium-9 columns"><!-- title -->
+          <label><span translate>Title</span>
+            <input type="text" name="title" required ng-model="album.title">
+          </label>
+        </div><!-- /title -->
+        <div class="small-12 medium-3 columns"><!-- year -->
+          <label><span translate>Year</span>
+            <input type="number" name="year" min="0" placeholder="yyyy" ng-model="album.year">
+          </label>
+        </div><!-- /year -->
+      </div><!-- /title|year -->
+      <div class="row"><!-- artist -->
+        <div class="small-12 columns">
+          <label><span translate>Artist</span>
+            <textarea name="artist" rows="3" wimm-array-to-list placeholder="{{'one artist per line'|translate}}" ng-model="album.artist"></textarea>
+          </label>
+        </div>
+      </div><!-- /artist -->
+      <div class="row"><!-- description -->
+        <div class="small-12 columns">
+          <label><span translate>Description</span>
+            <textarea name="description" rows="3" ng-model="album.description"></textarea>
+          </label>
+        </div>
+      </div><!-- /description -->
+      <div class="row"><!-- genre|theme -->
+        <div class="small-12 medium-6 columns"><!-- genre -->
+          <label><span translate>Style</span>
+            <textarea name="genre" rows="5" wimm-array-to-list placeholder="{{'one genre per line'|translate}}" ng-model="album.genre"></textarea>
+          </label>
+        </div><!-- /genre -->
+        <div class="small-12 medium-6 columns"><!-- theme -->
+          <label><span translate>Mood</span>
+            <textarea name="theme" rows="5" wimm-array-to-list placeholder="{{'one theme per line'|translate}}" ng-model="album.theme"></textarea>
+          </label>
+        </div><!-- /mood -->
+      </div><!-- /genre|theme -->
+      <div class="row"><!-- style|mood -->
+        <div class="small-12 medium-6 columns"><!-- style -->
+          <label><span translate>Style</span>
+            <textarea name="style" rows="5" wimm-array-to-list placeholder="{{'one style per line'|translate}}" ng-model="album.style"></textarea>
+          </label>
+        </div><!-- /style -->
+        <div class="small-12 medium-6 columns"><!-- mood -->
+          <label><span translate>Mood</span>
+            <textarea name="mood" rows="5" wimm-array-to-list placeholder="{{'one mood per line'|translate}}" ng-model="album.mood"></textarea>
+          </label>
+        </div><!-- /mood -->
+      </div><!-- /style|mood -->
+      <div class="row"><!-- type -->
+        <div class="small-12 columns">
+          <label><span translate>Type</span>
+            <input type="text" name="type" ng-model="album.type">
+          </label>
+        </div>
+      </div><!-- /type -->
+      <div class="row"><!-- albumlabel -->
+        <div class="small-12 columns">
+          <label><span translate>Album Label</span>
+            <input type="text" name="albumlabel" ng-model="album.albumlabel">
+          </label>
+        </div>
+      </div><!-- /albumlabel -->
+      <div class="row"><!-- rating -->
+        <div class="small-12 columns">
+          <label><span translate>Rating</span>
+            <input type="number" name="rating" min="0" step="any" wimm-string-to-number ng-model="album.rating">
+          </label>
+        </div>
+      </div><!-- /rating -->
+      <div class="row">
+        <div class="small-12 columns">
+          <button ng-click="saveChanges(album.albumid, myForm)" ng-disabled="myForm.$pristine" ng-class="{success: myForm.$submitted}" class="button expand" role="button" translate>Save</button>
+        </div>
+      </div>
+    </form>
+
+  </tab>
+  <tab heading="Songs">
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th translate>Title</th>
+          <th translate>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="song in songs">
+          <td>{{song.track}}</td>
+          <td><a ui-sref="song({songid: song.songid})">{{song.title}}</a></td>
+          <td>{{song.duration}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </tab>
+</tabset>
+
+    </div>
+  </div>

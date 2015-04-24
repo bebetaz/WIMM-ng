@@ -1,0 +1,121 @@
+<header class="row">
+  <div class="small-12 columns">
+    <h1>{{artist.artist}}</h1>
+  </div>
+</header>
+
+<!--
+
+    [ string born = "" ]
+    [ string formed = "" ]
+    [ string died = "" ]
+    [ Array.String style ]
+    [ Array.String yearsactive ]
+    [ Array.String mood ]
+    [ string musicbrainzartistid = "" ]
+    [ string disbanded = "" ]
+    [ string description = "" ]
+    string artist
+    [ Array.String instrument ]
+Library.Id artistid
+
+-->
+
+<div class="row">
+  <div class="small-12 columns">
+
+<tabset>
+  <tab heading="Details">
+
+    <form name="myForm">
+      <div class="row"><!-- artist -->
+        <div class="small-12 columns">
+          <label><span translate>Artist</span>
+            <input type="text" name="artist" ng-model="artist.artist">
+          </label>
+        </div>
+      </div><!-- /artist -->
+      <div class="row"><!-- born|formed|died -->
+        <div class="small-12 medium-4 columns"><!-- born -->
+          <label><span translate>Born</span>
+            <input type="text" name="born" ng-model="artist.born">
+          </label>
+        </div><!-- /born -->
+        <div class="small-12 medium-4 columns"><!-- formed -->
+          <label><span translate>Formed</span>
+            <input type="text" name="formed" ng-model="artist.formed">
+          </label>
+        </div><!-- /formed -->
+        <div class="small-12 medium-4 columns"><!-- died -->
+          <label><span translate>Died</span>
+            <input type="text" name="died" ng-model="movie.died">
+          </label>
+        </div><!-- /died -->
+      </div><!-- /born|formed|died -->
+      <div class="row"><!-- disbanded|musicbrainzartistid -->
+        <div class="small-12 medium-4 columns"><!-- disbanded -->
+          <label><span translate>Disbanded</span>
+            <input type="text" name="disbanded" ng-model="artist.disbanded">
+          </label>
+        </div><!-- /disbanded -->
+        <div class="small-12 medium-8 columns"><!-- musicbrainzartistid -->
+          <label><span translate>MusicBrainz Artist ID</span>
+            <input type="text" name="musicbrainzartistid" ng-model="artist.musicbrainzartistid">
+          </label>
+        </div><!-- /musicbrainzartistid -->
+      </div><!-- /disbanded|musicbrainzartistid -->
+      <div class="row"><!-- description -->
+        <div class="small-12 columns">
+          <label><span translate>Description</span>
+            <textarea name="description" rows="3" ng-model="artist.description"></textarea>
+          </label>
+        </div>
+      </div><!-- /description -->
+      <div class="row"><!-- style|mood -->
+        <div class="small-12 medium-6 columns"><!-- style -->
+          <label><span translate>Style</span>
+            <textarea name="style" rows="5" wimm-array-to-list placeholder="{{'one style per line'|translate}}" ng-model="artist.style"></textarea>
+          </label>
+        </div><!-- /style -->
+        <div class="small-12 medium-6 columns"><!-- mood -->
+          <label><span translate>Mood</span>
+            <textarea name="mood" rows="5" wimm-array-to-list placeholder="{{'one mood per line'|translate}}" ng-model="artist.mood"></textarea>
+          </label>
+        </div><!-- /mood -->
+      </div><!-- /style|mood -->
+      <div class="row"><!-- instrument|yearsactive -->
+        <div class="small-12 medium-6 columns"><!-- instrument -->
+          <label><span translate>Instrument</span>
+            <input type="text" name="instrument" wimm-array-to-list placeholder="{{'one instrument per line'|translate}}" ng-model="artist.instrument">
+          </label>
+        </div><!-- /instrument -->
+        <div class="small-12 medium-6 columns"><!-- yearsactive -->
+          <label><span translate>Years Active</span>
+            <textarea name="yearsactive" wimm-array-to-list placeholder="{{'one year per line'|translate}}" ng-model="artist.yearsactive"></textarea>
+          </label>
+        </div><!-- /yearsactive -->
+      </div><!-- /instrument|yearsactive -->
+      <div class="row">
+        <div class="small-12 columns">
+          <button ng-click="saveChanges(artist.artistid, myForm)" ng-disabled="myForm.$pristine" ng-class="{success: myForm.$submitted}" class="button expand" role="button" translate>Save</button>
+        </div>
+      </div>
+    </form>
+
+  </tab>
+  <tab heading="Albums">
+
+    <ul class="small-block-grid-2 medium-block-grid-4 xlarge-block-grid-6">
+      <li ng-repeat="album in albums">
+        <a class="th" role="button" aria-label="Thumbnail" ui-sref="album({albumid: album.albumid})" data-aspect-ratio="1:1">
+          <img ng-src="{{album.thumbnail | wimmArtworkUrl}}">
+        </a>
+        <a ui-sref="album({albumid: album.albumid})" class="small button expand" role="button">{{album.title}}</a>
+      </li>
+    </ul>
+
+  </tab>
+</tabset>
+
+    </div>
+  </div>

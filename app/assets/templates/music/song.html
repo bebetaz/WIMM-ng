@@ -1,0 +1,74 @@
+<header class="row">
+  <div class="small-12 columns">
+    <h1>{{song.title}}</h1>
+  </div>
+</header>
+
+<!--
+
+Library.Id songid
+    [ Optional.String title = null ]
+    [ mixed artist = null ]
+[ mixed albumartist = null ]
+[ mixed genre = null ]
+    [ Optional.Integer year = null ]
+[ Optional.Integer rating = null ]
+[ Optional.String album = null ]
+    [ Optional.Integer track = null ]
+    [ Optional.Integer disc = null ]
+[ Optional.Integer duration = null ]
+    [ Optional.String comment = null ]
+[ Optional.String musicbrainztrackid = null ]
+[ Optional.String musicbrainzartistid = null ]
+[ Optional.String musicbrainzalbumid = null ]
+[ Optional.String musicbrainzalbumartistid = null ]
+
+-->
+
+<div class="row">
+  <div class="small-12 columns">
+    <form name="myForm">
+      <div class="row"><!-- track|title|year -->
+        <div class="small-1 medium-1 columns"><!-- track -->
+          <label><span translate>Track</span>
+            <input type="number" name="track" min="0" step="any" wimm-string-to-number ng-model="song.track">
+          </label>
+        </div><!-- /track -->
+        <div class="small-11 medium-8 columns"><!-- title -->
+          <label><span translate>Title</span>
+            <input type="text" name="title" required ng-model="song.title">
+          </label>
+        </div><!-- /title -->
+        <div class="small-12 medium-3 columns"><!-- year -->
+          <label><span translate>Year</span>
+            <input type="number" name="year" min="0" placeholder="yyyy" ng-model="song.year">
+          </label>
+        </div><!-- /year -->
+      </div><!-- /track|title|year -->
+      <div class="row"><!-- disc|artist -->
+        <div class="small-1 columns"><!-- disc -->
+          <label><span translate>Disc</span>
+            <input type="number" name="disc" min="0" step="any" wimm-string-to-number ng-model="song.disc">
+          </label>
+        </div><!-- /disc -->
+        <div class="small-11 columns"><!-- artist -->
+          <label><span translate>Artist</span>
+            <textarea name="artist" rows="3" wimm-array-to-list placeholder="{{'one artist per line'|translate}}" ng-model="song.artist"></textarea>
+          </label>
+        </div><!-- /artist -->
+      </div><!-- /disc|artist -->
+      <div class="row"><!-- comment -->
+        <div class="small-12 columns">
+          <label><span translate>Comment</span>
+            <textarea name="comment" rows="3" ng-model="album.comment"></textarea>
+          </label>
+        </div>
+      </div><!-- /comment -->
+      <div class="row">
+        <div class="small-12 columns">
+          <button ng-click="saveChanges(song.songid, myForm)" ng-disabled="myForm.$pristine" ng-class="{success: myForm.$submitted}" class="button expand" role="button" translate>Save</button>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>

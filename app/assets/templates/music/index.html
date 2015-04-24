@@ -1,11 +1,10 @@
 <header class="row">
   <div class="small-12 columns">
-    <h1 translate>Music</h1>
+    <h1><span translate>Music</span><span ng-if="sectionTitle"> / {{sectionTitle}}</span></h1>
   </div>
 </header>
 
 <main class="row">
-  <div class="small-12 columns">
-    <p translate>Not implemented yet.</p>
+  <div class="small-12 columns" ui-view>
   </div>
 </main>
