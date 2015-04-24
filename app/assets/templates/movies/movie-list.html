@@ -8,7 +8,7 @@
   <div class="small-12 columns">
     <ul class="small-block-grid-2 medium-block-grid-6 large-block-grid-7 xlarge-block-grid-8">
       <li ng-repeat="movie in data.movies">
-        <a class="th" role="button" aria-label="Thumbnail" ui-sref="movie({movieid: movie.movieid})">
+        <a class="th" role="button" aria-label="Thumbnail" ui-sref="movie({movieid: movie.movieid})" data-aspect-ratio="2:3">
           <img ng-src="{{movie.thumbnail | wimmArtworkUrl}}" title="{{movie.title}}">
         </a>
         <a ui-sref="movie({movieid: movie.movieid})" class="small button expand" role="button">{{movie.title}}</a>

@@ -151,7 +151,7 @@ Library.Id tvshowid
 
     <ul class="small-block-grid-2 medium-block-grid-4 xlarge-block-grid-6">
       <li ng-repeat="season in seasons.seasons">
-        <a class="th" role="button" aria-label="Thumbnail" ui-sref="tvSeason({tvshowid: tvShow.tvshowid, season: season.season})">
+        <a class="th" role="button" aria-label="Thumbnail" ui-sref="tvSeason({tvshowid: tvShow.tvshowid, season: season.season})" data-aspect-ratio="2:3">
           <img ng-src="{{season.thumbnail | wimmArtworkUrl}}">
         </a>
         <a ui-sref="tvSeason({tvshowid: tvShow.tvshowid, season: season.season})" class="small button expand" role="button"><span translate>Season</span> {{season.season}}</a>
