@@ -9,7 +9,7 @@
     <ul class="small-block-grid-2 medium-block-grid-4 xlarge-block-grid-6">
       <li ng-repeat="episode in episodes">
         <a class="th" role="button" aria-label="Thumbnail" ui-sref="tvEpisode({tvshowid: tvShow.tvshowid, season: season, episodeid: episode.episodeid, episode: episode.episode})" data-aspect-ratio="16:9">
-          <img ng-src="{{episode.thumbnail | wimmArtworkUrl}}}}">
+          <img ng-src="{{episode.thumbnail | wimmArtworkUrl}}}}" title="{{episode.episode}}. {{episode.title}}">
         </a>
         <a ui-sref="tvEpisode({tvshowid: tvShow.tvshowid, season: season, episodeid: episode.episodeid, episode: episode.episode})" class="small button expand" role="button"><small>{{episode.episode}}.</small> {{episode.title}}</a>
       </li>
